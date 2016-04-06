@@ -1,0 +1,33 @@
+{
+    "name": "artikcloud/artikcloud-php",
+    "version": "2.0.0",
+    "description": "",
+    "keywords": [
+        "artikcloud",
+        "php",
+        "sdk",
+        "api"
+    ],
+    "homepage": "http://artik.cloud",
+    "license": "Apache v2",
+    "authors": [
+        {
+            "name": "Artik Cloud and contributors",
+            "homepage": "https://github.com/artikcloud/artikcloud-php"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "satooshi/php-coveralls": "~0.6.1",
+        "squizlabs/php_codesniffer": "~2.0"
+    },
+    "autoload": {
+        "psr-4": { "ArtikCloud\\" : "ArtikCloud/" }
+    }
+}
