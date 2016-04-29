@@ -51,7 +51,7 @@ class ActionDetailsArray implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
-        'tags' => '\ArtikCloud\Model\ActionDetails[]'
+        'actions' => '\ArtikCloud\Model\ActionDetails[]'
     );
   
     static function swaggerTypes() {
@@ -63,7 +63,7 @@ class ActionDetailsArray implements ArrayAccess
       * @var string[] 
       */
     static $attributeMap = array(
-        'tags' => 'tags'
+        'actions' => 'actions'
     );
   
     static function attributeMap() {
@@ -75,7 +75,7 @@ class ActionDetailsArray implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
-        'tags' => 'setTags'
+        'actions' => 'setActions'
     );
   
     static function setters() {
@@ -87,7 +87,7 @@ class ActionDetailsArray implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
-        'tags' => 'getTags'
+        'actions' => 'getActions'
     );
   
     static function getters() {
@@ -96,10 +96,10 @@ class ActionDetailsArray implements ArrayAccess
 
     
     /**
-      * $tags 
+      * $actions 
       * @var \ArtikCloud\Model\ActionDetails[]
       */
-    protected $tags;
+    protected $actions;
     
 
     /**
@@ -110,28 +110,28 @@ class ActionDetailsArray implements ArrayAccess
     {
         
         if ($data != null) {
-            $this->tags = $data["tags"];
+            $this->actions = $data["actions"];
         }
     }
     
     /**
-     * Gets tags
+     * Gets actions
      * @return \ArtikCloud\Model\ActionDetails[]
      */
-    public function getTags()
+    public function getActions()
     {
-        return $this->tags;
+        return $this->actions;
     }
   
     /**
-     * Sets tags
-     * @param \ArtikCloud\Model\ActionDetails[] $tags 
+     * Sets actions
+     * @param \ArtikCloud\Model\ActionDetails[] $actions 
      * @return $this
      */
-    public function setTags($tags)
+    public function setActions($actions)
     {
         
-        $this->tags = $tags;
+        $this->actions = $actions;
         return $this;
     }
     
