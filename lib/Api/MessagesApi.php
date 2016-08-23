@@ -105,7 +105,7 @@ class MessagesApi
     /**
      * Operation getAggregatesHistogram
      *
-     * Get Histogram aggregates
+     * Get Normalized Message Histogram
      *
      * @param int $start_date Timestamp of earliest message (in milliseconds since epoch). (required)
      * @param int $end_date Timestamp of latest message (in milliseconds since epoch). (required)
@@ -124,7 +124,7 @@ class MessagesApi
     /**
      * Operation getAggregatesHistogramWithHttpInfo
      *
-     * Get Histogram aggregates
+     * Get Normalized Message Histogram
      *
      * @param int $start_date Timestamp of earliest message (in milliseconds since epoch). (required)
      * @param int $end_date Timestamp of latest message (in milliseconds since epoch). (required)
