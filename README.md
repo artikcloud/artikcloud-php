@@ -1,6 +1,8 @@
 ARTIK Cloud PHP SDK
 ===================
 
+[![Build Status](https://travis-ci.org/artikcloud/artikcloud-php.svg?branch=master)](https://travis-ci.org/artikcloud/artikcloud-php)
+
 This SDK helps you connect your PHP scripts to ARTIK Cloud. The SDK exposes a number of methods to easily execute REST API calls to ARTIK Cloud.
 
 ## Requirements
