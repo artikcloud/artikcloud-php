@@ -161,25 +161,25 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
      * Send Message Action
      *
      */
-    public function test_sendMessageAction() {
-      $device_token = '1eef3e3251e147d1ac707a57f6779c49';
-      $device_sdid = '993925c3cd994bf7a51c620884be65e9';
+    public function test_sendMessage() {
+      $device_token = 'dc43d12e2b59495daf94631e6ddfe3e8';
+      $device_sdid = '19da42ee01414722a6ad1224097c38d4';
 
-      $api_client = new ArtikCloud\ApiClient();
+      $api_client = new ApiClient();
       $api_client->getConfig()->setAccessToken($device_token);
       //$api_client->getConfig()->setDebug(true);
-      $messages_api = new ArtikCloud\Api\MessagesApi($api_client);
+      $messages_api = new Api\MessagesApi($api_client);
 
-      $message = new ArtikCloud\Model\MessageAction();
-      $message->setSdid('993925c3cd994bf7a51c620884be65e9');
+      $message = new Model\Message();
+      $message->setSdid($device_sdid);
       $message->setTs(round(microtime(true) * 1000));
       $message->setType("message");
 
       //$message_data = [ "volume" => 5];
-      $message_data = array("volume" => 5 );
+      $message_data = array("steps" => 5 );
       $message->setData($message_data);
 
-      $message_id_env = $messages_api->sendMessageAction($message);
+      $message_id_env = $messages_api->sendMessage($message);
       $this->assertInstanceOf('ArtikCloud\Model\MessageIDEnvelope', $message_id_env);
 
       $message_id = $message_id_env->getData()->getMid();
@@ -194,8 +194,8 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
       $this->assertSame($normalized->getMid(), $message_id);
 
       // Get Scalar Values from Normalized Message
-      $volume = $normalized->getData()["volume"][0];
-      $this->assertSame($volume, 5);
+      $steps = $normalized->getData()["steps"][0];
+      $this->assertSame($steps, 5);
     }
 
 }

@@ -118,10 +118,9 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_getSelf() {
-      $api_client = new ArtikCloud\ApiClient();
-      $api_client->getConfig()->setHost('https://api.artik.cloud/v1.1');
-      $api_client->getConfig()->setAccessToken('2fd493b9877e48bd9fe699deb1e07003');
-      $users_api = new ArtikCloud\Api\UsersApi($api_client);
+      $api_client = new ApiClient();
+      $api_client->getConfig()->setAccessToken('fa460261b858484583097ecb331faaa8');
+      $users_api = new Api\UsersApi($api_client);
 
       $response = $users_api->getSelf();
         $this->assertInstanceOf('ArtikCloud\Model\UserEnvelope', $response);
@@ -136,10 +135,9 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_getUserDevices() {
-      $api_client = new ArtikCloud\ApiClient();
-      $api_client->getConfig()->setHost('https://api.artik.cloud/v1.1');
-      $api_client->getConfig()->setAccessToken('2fd493b9877e48bd9fe699deb1e07003');
-      $users_api = new ArtikCloud\Api\UsersApi($api_client);
+      $api_client = new ApiClient();
+      $api_client->getConfig()->setAccessToken('fa460261b858484583097ecb331faaa8');
+      $users_api = new Api\UsersApi($api_client);
 
       $user_id = '04ddbd35d57d4d7b8f07f219c44457b2';
 

@@ -9,8 +9,10 @@ Method | HTTP request | Description
 [**getLastNormalizedMessages**](MessagesApi.md#getLastNormalizedMessages) | **GET** /messages/last | Get Last Normalized Message
 [**getMessageAggregates**](MessagesApi.md#getMessageAggregates) | **GET** /messages/analytics/aggregates | Get Normalized Message Aggregates
 [**getMessageSnapshots**](MessagesApi.md#getMessageSnapshots) | **GET** /messages/snapshots | Get Message Snapshots
+[**getNormalizedActions**](MessagesApi.md#getNormalizedActions) | **GET** /actions | Get Normalized Actions
 [**getNormalizedMessages**](MessagesApi.md#getNormalizedMessages) | **GET** /messages | Get Normalized Messages
-[**sendMessageAction**](MessagesApi.md#sendMessageAction) | **POST** /messages | Send Message Action
+[**sendActions**](MessagesApi.md#sendActions) | **POST** /actions | Send Actions
+[**sendMessage**](MessagesApi.md#sendMessage) | **POST** /messages | Send Message
 
 
 # **getAggregatesHistogram**
@@ -281,6 +283,68 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
+# **getNormalizedActions**
+> \ArtikCloud\Model\NormalizedActionsEnvelope getNormalizedActions($uid, $ddid, $mid, $offset, $count, $start_date, $end_date, $order)
+
+Get Normalized Actions
+
+Get the actions normalized
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: artikcloud_oauth
+ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new ArtikCloud\Api\MessagesApi();
+$uid = "uid_example"; // string | User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to.
+$ddid = "ddid_example"; // string | Destination device ID of the actions being searched.
+$mid = "mid_example"; // string | The message ID being searched.
+$offset = "offset_example"; // string | A string that represents the starting item, should be the value of 'next' field received in the last response. (required for pagination)
+$count = 56; // int | count
+$start_date = 789; // int | startDate
+$end_date = 789; // int | endDate
+$order = "order_example"; // string | Desired sort order: 'asc' or 'desc'
+
+try {
+    $result = $api_instance->getNormalizedActions($uid, $ddid, $mid, $offset, $count, $start_date, $end_date, $order);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MessagesApi->getNormalizedActions: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uid** | **string**| User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to. | [optional]
+ **ddid** | **string**| Destination device ID of the actions being searched. | [optional]
+ **mid** | **string**| The message ID being searched. | [optional]
+ **offset** | **string**| A string that represents the starting item, should be the value of &#39;next&#39; field received in the last response. (required for pagination) | [optional]
+ **count** | **int**| count | [optional]
+ **start_date** | **int**| startDate | [optional]
+ **end_date** | **int**| endDate | [optional]
+ **order** | **string**| Desired sort order: &#39;asc&#39; or &#39;desc&#39; | [optional]
+
+### Return type
+
+[**\ArtikCloud\Model\NormalizedActionsEnvelope**](../Model/NormalizedActionsEnvelope.md)
+
+### Authorization
+
+[artikcloud_oauth](../../README.md#artikcloud_oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
 # **getNormalizedMessages**
 > \ArtikCloud\Model\NormalizedMessagesEnvelope getNormalizedMessages($uid, $sdid, $mid, $field_presence, $filter, $offset, $count, $start_date, $end_date, $order)
 
@@ -299,7 +363,7 @@ ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS
 $api_instance = new ArtikCloud\Api\MessagesApi();
 $uid = "uid_example"; // string | User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to.
 $sdid = "sdid_example"; // string | Source device ID of the messages being searched.
-$mid = "mid_example"; // string | The SAMI message ID being searched.
+$mid = "mid_example"; // string | The message ID being searched.
 $field_presence = "field_presence_example"; // string | String representing a field from the specified device ID.
 $filter = "filter_example"; // string | Filter.
 $offset = "offset_example"; // string | A string that represents the starting item, should be the value of 'next' field received in the last response. (required for pagination)
@@ -323,7 +387,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uid** | **string**| User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to. | [optional]
  **sdid** | **string**| Source device ID of the messages being searched. | [optional]
- **mid** | **string**| The SAMI message ID being searched. | [optional]
+ **mid** | **string**| The message ID being searched. | [optional]
  **field_presence** | **string**| String representing a field from the specified device ID. | [optional]
  **filter** | **string**| Filter. | [optional]
  **offset** | **string**| A string that represents the starting item, should be the value of &#39;next&#39; field received in the last response. (required for pagination) | [optional]
@@ -347,12 +411,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
-# **sendMessageAction**
-> \ArtikCloud\Model\MessageIDEnvelope sendMessageAction($data)
+# **sendActions**
+> \ArtikCloud\Model\MessageIDEnvelope sendActions($data)
 
-Send Message Action
+Send Actions
 
-(Deprecated) Send a message or an Action:<br/><table><tr><th>Combination</th><th>Parameters</th><th>Description</th></tr><tr><td>Send Message</td><td>sdid, type=message</td><td>Send a message from a Source Device</td></tr><tr><td>Send Action</td><td>ddid, type=action</td><td>Send an action to a Destination Device</td></tr><tr><td>Common</td><td>data, ts, token</td><td>Parameters that can be used with the above combinations.</td></tr></table>
+Send Actions
 
 ### Example
 ```php
@@ -363,13 +427,13 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new ArtikCloud\Api\MessagesApi();
-$data = new \ArtikCloud\Model\MessageAction(); // \ArtikCloud\Model\MessageAction | Message or Action object that is passed in the body
+$data = new \ArtikCloud\Model\Actions(); // \ArtikCloud\Model\Actions | Actions that are passed in the body
 
 try {
-    $result = $api_instance->sendMessageAction($data);
+    $result = $api_instance->sendActions($data);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling MessagesApi->sendMessageAction: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MessagesApi->sendActions: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -378,7 +442,55 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\ArtikCloud\Model\MessageAction**](../Model/\ArtikCloud\Model\MessageAction.md)| Message or Action object that is passed in the body |
+ **data** | [**\ArtikCloud\Model\Actions**](../Model/\ArtikCloud\Model\Actions.md)| Actions that are passed in the body |
+
+### Return type
+
+[**\ArtikCloud\Model\MessageIDEnvelope**](../Model/MessageIDEnvelope.md)
+
+### Authorization
+
+[artikcloud_oauth](../../README.md#artikcloud_oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **sendMessage**
+> \ArtikCloud\Model\MessageIDEnvelope sendMessage($data)
+
+Send Message
+
+Send a message
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: artikcloud_oauth
+ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new ArtikCloud\Api\MessagesApi();
+$data = new \ArtikCloud\Model\Message(); // \ArtikCloud\Model\Message | Message object that is passed in the body
+
+try {
+    $result = $api_instance->sendMessage($data);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MessagesApi->sendMessage: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\ArtikCloud\Model\Message**](../Model/\ArtikCloud\Model\Message.md)| Message object that is passed in the body |
 
 ### Return type
 

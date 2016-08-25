@@ -283,4 +283,79 @@ class TokensApi
         }
     }
 
+    /**
+     * Operation tokenInfo
+     *
+     * Token Info
+     *
+     * @return \ArtikCloud\Model\TokenInfoSuccessResponse
+     * @throws \ArtikCloud\ApiException on non-2xx response
+     */
+    public function tokenInfo()
+    {
+        list($response) = $this->tokenInfoWithHttpInfo();
+        return $response;
+    }
+
+    /**
+     * Operation tokenInfoWithHttpInfo
+     *
+     * Token Info
+     *
+     * @return Array of \ArtikCloud\Model\TokenInfoSuccessResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ArtikCloud\ApiException on non-2xx response
+     */
+    public function tokenInfoWithHttpInfo()
+    {
+        // parse inputs
+        $resourcePath = "/accounts/tokenInfo";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\ArtikCloud\Model\TokenInfoSuccessResponse',
+                '/accounts/tokenInfo'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\ArtikCloud\Model\TokenInfoSuccessResponse', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ArtikCloud\Model\TokenInfoSuccessResponse', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
 }

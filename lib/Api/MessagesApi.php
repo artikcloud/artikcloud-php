@@ -632,13 +632,136 @@ class MessagesApi
     }
 
     /**
+     * Operation getNormalizedActions
+     *
+     * Get Normalized Actions
+     *
+     * @param string $uid User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to. (optional)
+     * @param string $ddid Destination device ID of the actions being searched. (optional)
+     * @param string $mid The message ID being searched. (optional)
+     * @param string $offset A string that represents the starting item, should be the value of &#39;next&#39; field received in the last response. (required for pagination) (optional)
+     * @param int $count count (optional)
+     * @param int $start_date startDate (optional)
+     * @param int $end_date endDate (optional)
+     * @param string $order Desired sort order: &#39;asc&#39; or &#39;desc&#39; (optional)
+     * @return \ArtikCloud\Model\NormalizedActionsEnvelope
+     * @throws \ArtikCloud\ApiException on non-2xx response
+     */
+    public function getNormalizedActions($uid = null, $ddid = null, $mid = null, $offset = null, $count = null, $start_date = null, $end_date = null, $order = null)
+    {
+        list($response) = $this->getNormalizedActionsWithHttpInfo($uid, $ddid, $mid, $offset, $count, $start_date, $end_date, $order);
+        return $response;
+    }
+
+    /**
+     * Operation getNormalizedActionsWithHttpInfo
+     *
+     * Get Normalized Actions
+     *
+     * @param string $uid User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to. (optional)
+     * @param string $ddid Destination device ID of the actions being searched. (optional)
+     * @param string $mid The message ID being searched. (optional)
+     * @param string $offset A string that represents the starting item, should be the value of &#39;next&#39; field received in the last response. (required for pagination) (optional)
+     * @param int $count count (optional)
+     * @param int $start_date startDate (optional)
+     * @param int $end_date endDate (optional)
+     * @param string $order Desired sort order: &#39;asc&#39; or &#39;desc&#39; (optional)
+     * @return Array of \ArtikCloud\Model\NormalizedActionsEnvelope, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ArtikCloud\ApiException on non-2xx response
+     */
+    public function getNormalizedActionsWithHttpInfo($uid = null, $ddid = null, $mid = null, $offset = null, $count = null, $start_date = null, $end_date = null, $order = null)
+    {
+        // parse inputs
+        $resourcePath = "/actions";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // query params
+        if ($uid !== null) {
+            $queryParams['uid'] = $this->apiClient->getSerializer()->toQueryValue($uid);
+        }
+        // query params
+        if ($ddid !== null) {
+            $queryParams['ddid'] = $this->apiClient->getSerializer()->toQueryValue($ddid);
+        }
+        // query params
+        if ($mid !== null) {
+            $queryParams['mid'] = $this->apiClient->getSerializer()->toQueryValue($mid);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
+        }
+        // query params
+        if ($count !== null) {
+            $queryParams['count'] = $this->apiClient->getSerializer()->toQueryValue($count);
+        }
+        // query params
+        if ($start_date !== null) {
+            $queryParams['startDate'] = $this->apiClient->getSerializer()->toQueryValue($start_date);
+        }
+        // query params
+        if ($end_date !== null) {
+            $queryParams['endDate'] = $this->apiClient->getSerializer()->toQueryValue($end_date);
+        }
+        // query params
+        if ($order !== null) {
+            $queryParams['order'] = $this->apiClient->getSerializer()->toQueryValue($order);
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\ArtikCloud\Model\NormalizedActionsEnvelope',
+                '/actions'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\ArtikCloud\Model\NormalizedActionsEnvelope', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ArtikCloud\Model\NormalizedActionsEnvelope', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation getNormalizedMessages
      *
      * Get Normalized Messages
      *
      * @param string $uid User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to. (optional)
      * @param string $sdid Source device ID of the messages being searched. (optional)
-     * @param string $mid The SAMI message ID being searched. (optional)
+     * @param string $mid The message ID being searched. (optional)
      * @param string $field_presence String representing a field from the specified device ID. (optional)
      * @param string $filter Filter. (optional)
      * @param string $offset A string that represents the starting item, should be the value of &#39;next&#39; field received in the last response. (required for pagination) (optional)
@@ -662,7 +785,7 @@ class MessagesApi
      *
      * @param string $uid User ID. If not specified, assume that of the current authenticated user. If specified, it must be that of a user for which the current authenticated user has read access to. (optional)
      * @param string $sdid Source device ID of the messages being searched. (optional)
-     * @param string $mid The SAMI message ID being searched. (optional)
+     * @param string $mid The message ID being searched. (optional)
      * @param string $field_presence String representing a field from the specified device ID. (optional)
      * @param string $filter Filter. (optional)
      * @param string $offset A string that represents the starting item, should be the value of &#39;next&#39; field received in the last response. (required for pagination) (optional)
@@ -767,34 +890,120 @@ class MessagesApi
     }
 
     /**
-     * Operation sendMessageAction
+     * Operation sendActions
      *
-     * Send Message Action
+     * Send Actions
      *
-     * @param \ArtikCloud\Model\MessageAction $data Message or Action object that is passed in the body (required)
+     * @param \ArtikCloud\Model\Actions $data Actions that are passed in the body (required)
      * @return \ArtikCloud\Model\MessageIDEnvelope
      * @throws \ArtikCloud\ApiException on non-2xx response
      */
-    public function sendMessageAction($data)
+    public function sendActions($data)
     {
-        list($response) = $this->sendMessageActionWithHttpInfo($data);
+        list($response) = $this->sendActionsWithHttpInfo($data);
         return $response;
     }
 
     /**
-     * Operation sendMessageActionWithHttpInfo
+     * Operation sendActionsWithHttpInfo
      *
-     * Send Message Action
+     * Send Actions
      *
-     * @param \ArtikCloud\Model\MessageAction $data Message or Action object that is passed in the body (required)
+     * @param \ArtikCloud\Model\Actions $data Actions that are passed in the body (required)
      * @return Array of \ArtikCloud\Model\MessageIDEnvelope, HTTP status code, HTTP response headers (array of strings)
      * @throws \ArtikCloud\ApiException on non-2xx response
      */
-    public function sendMessageActionWithHttpInfo($data)
+    public function sendActionsWithHttpInfo($data)
     {
         // verify the required parameter 'data' is set
         if ($data === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $data when calling sendMessageAction');
+            throw new \InvalidArgumentException('Missing the required parameter $data when calling sendActions');
+        }
+        // parse inputs
+        $resourcePath = "/actions";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($data)) {
+            $_tempBody = $data;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'POST',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\ArtikCloud\Model\MessageIDEnvelope',
+                '/actions'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\ArtikCloud\Model\MessageIDEnvelope', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ArtikCloud\Model\MessageIDEnvelope', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation sendMessage
+     *
+     * Send Message
+     *
+     * @param \ArtikCloud\Model\Message $data Message object that is passed in the body (required)
+     * @return \ArtikCloud\Model\MessageIDEnvelope
+     * @throws \ArtikCloud\ApiException on non-2xx response
+     */
+    public function sendMessage($data)
+    {
+        list($response) = $this->sendMessageWithHttpInfo($data);
+        return $response;
+    }
+
+    /**
+     * Operation sendMessageWithHttpInfo
+     *
+     * Send Message
+     *
+     * @param \ArtikCloud\Model\Message $data Message object that is passed in the body (required)
+     * @return Array of \ArtikCloud\Model\MessageIDEnvelope, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ArtikCloud\ApiException on non-2xx response
+     */
+    public function sendMessageWithHttpInfo($data)
+    {
+        // verify the required parameter 'data' is set
+        if ($data === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $data when calling sendMessage');
         }
         // parse inputs
         $resourcePath = "/messages";

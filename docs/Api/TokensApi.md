@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**checkToken**](TokensApi.md#checkToken) | **POST** /accounts/checkToken | Check Token
 [**refreshToken**](TokensApi.md#refreshToken) | **POST** /accounts/token | Refresh Token
+[**tokenInfo**](TokensApi.md#tokenInfo) | **GET** /accounts/tokenInfo | Token Info
 
 
 # **checkToken**
@@ -102,6 +103,50 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/x-www-form-urlencoded
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **tokenInfo**
+> \ArtikCloud\Model\TokenInfoSuccessResponse tokenInfo()
+
+Token Info
+
+Returns the Token Information
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: artikcloud_oauth
+ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new ArtikCloud\Api\TokensApi();
+
+try {
+    $result = $api_instance->tokenInfo();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TokensApi->tokenInfo: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\ArtikCloud\Model\TokenInfoSuccessResponse**](../Model/TokenInfoSuccessResponse.md)
+
+### Authorization
+
+[artikcloud_oauth](../../README.md#artikcloud_oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
