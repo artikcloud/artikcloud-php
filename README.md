@@ -7,7 +7,7 @@ This SDK helps you connect your PHP scripts to ARTIK Cloud. The SDK exposes a nu
 
 ## Requirements
 
-PHP 5.4.0 and later
+PHP 5.5.0 and later
 
 ## Installation & Usage
 ### Composer
