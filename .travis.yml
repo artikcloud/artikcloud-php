@@ -6,4 +6,4 @@ php:
     - 7.0
     - hhvm
 before_install: "composer install"
-script: "phpunit test/Api"
+script: "phpunit"
