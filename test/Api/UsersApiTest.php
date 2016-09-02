@@ -44,6 +44,7 @@ use \ArtikCloud\Configuration;
 use \ArtikCloud\ApiClient;
 use \ArtikCloud\ApiException;
 use \ArtikCloud\ObjectSerializer;
+use \ArtikCloudTests\ArtikTestCase;
 
 /**
  * UsersApiTest Class Doc Comment
@@ -54,15 +55,18 @@ use \ArtikCloud\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class UsersApiTest extends \PHPUnit_Framework_TestCase
+class UsersApiTest extends ArtikTestCase
 {
+
+    public static $api_client;
 
     /**
      * Setup before running any test cases
      */
     public static function setUpBeforeClass()
     {
-
+        self::$api_client = new ApiClient();
+        self::$api_client->getConfig()->setAccessToken(static::$artikParams['user1']['token']);
     }
 
     /**
@@ -87,6 +91,23 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
     public static function tearDownAfterClass()
     {
 
+    }
+
+    /**
+     * Test case for GetUserDeviceTypes
+     *
+     * Create User Application Properties.
+     *
+     */
+    public function testGetUserDeviceTypes()
+    {
+
+        $users_api = new Api\UsersApi(self::$api_client);
+
+        $response = $users_api->GetUserDeviceTypes(static::$artikParams['user1']['id']);
+        $this->assertInstanceOf('ArtikCloud\Model\DeviceTypesEnvelope', $response);
+        $this->assertNotNull($response, 'Call to GetUserDeviceTypes returned null');
+        $this->assertNotNull($response->getData()->getDeviceTypes(), 'Call to GetUserDeviceTypes returned an empty device list');
     }
 
     /**
@@ -118,14 +139,13 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_getSelf() {
-      $api_client = new ApiClient();
-      $api_client->getConfig()->setAccessToken('fa460261b858484583097ecb331faaa8');
-      $users_api = new Api\UsersApi($api_client);
 
-      $response = $users_api->getSelf();
+        $users_api = new Api\UsersApi(self::$api_client);
+
+        $response = $users_api->getSelf();
         $this->assertInstanceOf('ArtikCloud\Model\UserEnvelope', $response);
-        $this->assertSame($response->getData()->getName(), 'maneesh');
-        $this->assertSame($response->getData()->getFullName(), 'Maneesh Sahu');
+        $this->assertSame($response->getData()->getName(), static::$artikParams['user1']['name']);
+        $this->assertSame($response->getData()->getFullName(), static::$artikParams['user1']['fullname']);
     }
 
     /**
@@ -135,13 +155,10 @@ class UsersApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_getUserDevices() {
-      $api_client = new ApiClient();
-      $api_client->getConfig()->setAccessToken('fa460261b858484583097ecb331faaa8');
-      $users_api = new Api\UsersApi($api_client);
 
-      $user_id = '04ddbd35d57d4d7b8f07f219c44457b2';
+        $users_api = new Api\UsersApi(self::$api_client);
 
-      $response = $users_api->getUserDevices($user_id);
+        $response = $users_api->getUserDevices(static::$artikParams['user1']['id']);
         $this->assertInstanceOf('ArtikCloud\Model\DevicesEnvelope', $response);
     }
 
