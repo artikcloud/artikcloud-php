@@ -46,6 +46,9 @@ use \ArtikCloud\ApiException;
 use \ArtikCloud\ObjectSerializer;
 use \ArtikCloudTests\ArtikTestCase;
 
+// Models
+use ArtikCloud\Model\AppProperties;
+
 /**
  * UsersApiTest Class Doc Comment
  *
@@ -154,23 +157,12 @@ class UsersApiTest extends ArtikTestCase
      * Get User Devices
      *
      */
-    public function test_getUserDevices() {
+    public function testGetUserDevices() {
 
         $users_api = new Api\UsersApi(self::$api_client);
 
         $response = $users_api->getUserDevices(static::$artikParams['user1']['id']);
         $this->assertInstanceOf('ArtikCloud\Model\DevicesEnvelope', $response);
-    }
-
-    /**
-     * Test case for getUserDevices
-     *
-     * Get User Devices.
-     *
-     */
-    public function testGetUserDevices()
-    {
-
     }
 
     /**
@@ -181,6 +173,46 @@ class UsersApiTest extends ArtikTestCase
      */
     public function testGetUserProperties()
     {
+        
+        $users_api = new Api\UsersApi(self::$api_client);
+
+        // Load parameters to be used during test
+        $userId = static::$artikParams['user1']['id'];
+        $aid = static::$artikParams['user1']['aid'];
+
+        try {
+            // Read
+            $userProperties = $users_api->GetUserProperties($userId, $aid);
+
+        } catch (ApiException $e) {
+
+            // If not found
+            if ($e->getCode() === 404) {
+
+                // Create
+                $appProperties = new AppProperties();
+                $appProperties->setProperties('abc=def');
+
+                $userProperties = $users_api->CreateUserProperties($userId, $appProperties, $aid);
+            } else {
+
+                $this->fail('Non-404 Error returned by API');
+            }
+        }
+
+        $this->assertNotNull($userProperties);
+
+        // Update
+        $appProperties2 = new AppProperties();
+        $appProperties2->setProperties('mno=pqr');
+        $userProperties2 = $users_api->UpdateUserProperties($userId, $appProperties2, $aid);
+        $this->assertNotNull($userProperties2);
+        $this->assertEquals('mno=pqr', $appProperties2->getProperties(), 'Properties must be the same');
+
+        // Delete
+        $userProperties3 = $users_api->DeleteUserProperties($userId, $aid);
+        $this->assertNotNull($userProperties3);
+        $this->assertEquals($userProperties2, $userProperties3);
 
     }
 
