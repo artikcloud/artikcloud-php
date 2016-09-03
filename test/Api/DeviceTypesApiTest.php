@@ -108,7 +108,7 @@ class DeviceTypesApiTest extends ArtikTestCase
         // TODO uncomment below to test the method and replace null with proper value
         //$deviceTypeId = null;
         //$manifestVersionsEnvelope = self::$device_types_api->GetAvailableManifestVersions($deviceTypeId);
-        //Assert->assertInstanceOf('ArtikCloud\Model\ManifestVersionsEnvelope', $manifestVersionsEnvelope, 'Response must be an instance of ArtikCloud\Model\ManifestVersionsEnvelope');
+        //$this->assertInstanceOf('ArtikCloud\Model\ManifestVersionsEnvelope', $manifestVersionsEnvelope, 'Response must be an instance of ArtikCloud\Model\ManifestVersionsEnvelope');
     }
 
     /**
@@ -122,7 +122,7 @@ class DeviceTypesApiTest extends ArtikTestCase
         // TODO uncomment below to test the method and replace null with proper value
         //$deviceTypeId = null;
         //$deviceTypeEnvelope = self::$device_types_api->GetDeviceType($deviceTypeId);
-        //Assert->assertInstanceOf('ArtikCloud\Model\DeviceTypeEnvelope', $deviceTypeEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceTypeEnvelope');
+        //$this->assertInstanceOf('ArtikCloud\Model\DeviceTypeEnvelope', $deviceTypeEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceTypeEnvelope');
     }
 
     /**
@@ -133,7 +133,13 @@ class DeviceTypesApiTest extends ArtikTestCase
      */
     public function testGetDeviceTypes()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$name = null;
+        //$ffset = null;
+        //$count = null;
+        //$tags = null;
+        //$deviceTypesEnvelope = self::$device_types_api->GetDeviceTypes($name, $offset, $count, $tags);
+        //$this->assertInstanceOf('ArtikCloud\Model\DeviceTypesEnvelope', $deviceTypesEnvelope, 'Response must be an instance of DeviceTypesEnvelope');
     }
 
     /**
