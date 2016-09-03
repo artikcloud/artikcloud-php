@@ -141,7 +141,12 @@ class MessagesApiTest extends ArtikTestCase
      */
     public function testGetLastNormalizedMessages()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$count = null;
+        //$sdids = null;
+        //$fieldPresence = null;
+        //$normalizedMessagesEnvelope = self::$messages_api->GetLastNormalizedMessages($count, $sdids, $fieldPresence);
+        //$this->assertInstanceOf('ArtikCloud\Model\NormalizedMessagesEnvelope', $normalizedMessagesEnvelope, 'Response must be an instance of ArtikCloud\Model\NormalizedMessagesEnvelope');
     }
 
     /**
