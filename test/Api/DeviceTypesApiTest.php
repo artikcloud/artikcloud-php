@@ -150,7 +150,10 @@ class DeviceTypesApiTest extends ArtikTestCase
      */
     public function testGetLatestManifestProperties()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$deviceTypeId = null;
+        //$manifestPropertiesEnvelope = self::$device_types_api->GetLatestManifestProperties($deviceTypeId);
+        //$this->assertInstanceOf('ArtikCloud\Model\ManifestPropertiesEnvelope', $manifestPropertiesEnvelope, 'Response must be an instance of ArtikCloud\Model\ManifestPropertiesEnvelope');
     }
 
     /**
