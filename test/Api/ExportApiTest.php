@@ -108,7 +108,7 @@ class ExportApiTest extends ArtikTestCase
         // TODO uncomment below to test the method and replace null with proper value
         //$exportRequestInfo = null;
         //$exportRequestResponse = self::$export_api->ExportRequest($exportRequestInfo);
-        //$this->assertInstanceOf('ArtikCloud\Model\ExportRequestResponse', $exportRequestResponse, Response must be an instance of ArtikCloud\Model\ExportRequestResponse');
+        //$this->assertInstanceOf('ArtikCloud\Model\ExportRequestResponse', $exportRequestResponse, 'Response must be an instance of ArtikCloud\Model\ExportRequestResponse');
     }
 
     /**
@@ -119,7 +119,12 @@ class ExportApiTest extends ArtikTestCase
      */
     public function testGetExportHistory()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$trialId = null;
+        //$count = null;
+        //$offset = null;
+        //$exportHistoryResponse = self::$export_api->GetExportHistory($trialId, $count, $offset);
+        //$this->assertInstanceOf('ArtikCloud\Model\ExportHistoryResponse', $exportHistoryResponse, 'Response must be an instance of ArtikCloud\Model\ExportHistoryResponse');
     }
 
     /**
@@ -130,7 +135,10 @@ class ExportApiTest extends ArtikTestCase
      */
     public function testGetExportResult()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$exportId = null;
+        //$exportRequestResponse = self::$export_api->GetExportResult($exportId);
+        //$this->assertInternalType('string', $exportRequestResponse, 'Response must be a string');
     }
 
     /**
