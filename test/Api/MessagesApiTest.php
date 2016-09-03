@@ -44,6 +44,7 @@ use \ArtikCloud\Configuration;
 use \ArtikCloud\ApiClient;
 use \ArtikCloud\ApiException;
 use \ArtikCloud\ObjectSerializer;
+use \ArtikCloudTests\ArtikTestCase;
 
 /**
  * MessagesApiTest Class Doc Comment
@@ -54,15 +55,21 @@ use \ArtikCloud\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MessagesApiTest extends \PHPUnit_Framework_TestCase
+class MessagesApiTest extends ArtikTestCase
 {
+
+    public static $api_client;
+    public static $messages_api;
 
     /**
      * Setup before running any test cases
      */
     public static function setUpBeforeClass()
     {
+        self::$api_client = new ApiClient();
+        self::$api_client->getConfig()->setAccessToken(static::$artikParams['user1']['token']);
 
+        self::$messages_api = new Api\UsersApi(self::$api_client);
     }
 
     /**
@@ -86,7 +93,8 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
+        self::$api_client = null;
+        self::$messages_api = null;
     }
 
     /**
