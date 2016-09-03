@@ -62,6 +62,7 @@ class UsersApiTest extends ArtikTestCase
 {
 
     public static $api_client;
+    public static $users_api;
 
     /**
      * Setup before running any test cases
@@ -70,6 +71,8 @@ class UsersApiTest extends ArtikTestCase
     {
         self::$api_client = new ApiClient();
         self::$api_client->getConfig()->setAccessToken(static::$artikParams['user1']['token']);
+
+        self::$users_api = new Api\UsersApi(self::$api_client);
     }
 
     /**
@@ -94,6 +97,7 @@ class UsersApiTest extends ArtikTestCase
     public static function tearDownAfterClass()
     {
         self::$api_client = null;
+        self::$users_api = null;
     }
 
     /**
@@ -105,9 +109,7 @@ class UsersApiTest extends ArtikTestCase
     public function testGetUserDeviceTypes()
     {
 
-        $users_api = new Api\UsersApi(self::$api_client);
-
-        $response = $users_api->GetUserDeviceTypes(static::$artikParams['user1']['id']);
+        $response = self::$users_api->GetUserDeviceTypes(static::$artikParams['user1']['id']);
         $this->assertInstanceOf('ArtikCloud\Model\DeviceTypesEnvelope', $response);
         $this->assertNotNull($response, 'Call to GetUserDeviceTypes returned null');
         $this->assertNotNull($response->getData()->getDeviceTypes(), 'Call to GetUserDeviceTypes returned an empty device list');
@@ -119,11 +121,10 @@ class UsersApiTest extends ArtikTestCase
      * Get Current User Profile
      *
      */
-    public function test_getSelf() {
+    public function test_getSelf()
+    {
 
-        $users_api = new Api\UsersApi(self::$api_client);
-
-        $response = $users_api->getSelf();
+        $response = self::$users_api->getSelf();
         $this->assertInstanceOf('ArtikCloud\Model\UserEnvelope', $response);
         $this->assertSame($response->getData()->getName(), static::$artikParams['user1']['name']);
         $this->assertSame($response->getData()->getFullName(), static::$artikParams['user1']['fullname']);
@@ -135,11 +136,10 @@ class UsersApiTest extends ArtikTestCase
      * Get User Devices
      *
      */
-    public function testGetUserDevices() {
+    public function testGetUserDevices()
+    {
 
-        $users_api = new Api\UsersApi(self::$api_client);
-
-        $response = $users_api->getUserDevices(static::$artikParams['user1']['id']);
+        $response = self::$users_api->getUserDevices(static::$artikParams['user1']['id']);
         $this->assertInstanceOf('ArtikCloud\Model\DevicesEnvelope', $response);
     }
 
@@ -152,15 +152,13 @@ class UsersApiTest extends ArtikTestCase
     public function testGetUserProperties()
     {
 
-        $users_api = new Api\UsersApi(self::$api_client);
-
         // Load parameters to be used during test
         $userId = static::$artikParams['user1']['id'];
         $aid = static::$artikParams['user1']['aid'];
 
         try {
             // Read
-            $userProperties = $users_api->GetUserProperties($userId, $aid);
+            $userProperties = self::$users_api->GetUserProperties($userId, $aid);
 
         } catch (ApiException $e) {
 
@@ -171,7 +169,7 @@ class UsersApiTest extends ArtikTestCase
                 $appProperties = new AppProperties();
                 $appProperties->setProperties('abc=def');
 
-                $userProperties = $users_api->CreateUserProperties($userId, $appProperties, $aid);
+                $userProperties = self::$users_api->CreateUserProperties($userId, $appProperties, $aid);
             } else {
 
                 $this->fail('Non-404 Error returned by API');
@@ -183,12 +181,12 @@ class UsersApiTest extends ArtikTestCase
         // Update
         $appProperties2 = new AppProperties();
         $appProperties2->setProperties('mno=pqr');
-        $userProperties2 = $users_api->UpdateUserProperties($userId, $appProperties2, $aid);
+        $userProperties2 = self::$users_api->UpdateUserProperties($userId, $appProperties2, $aid);
         $this->assertNotNull($userProperties2);
         $this->assertEquals('mno=pqr', $appProperties2->getProperties(), 'Properties must be the same');
 
         // Delete
-        $userProperties3 = $users_api->DeleteUserProperties($userId, $aid);
+        $userProperties3 = self::$users_api->DeleteUserProperties($userId, $aid);
         $this->assertNotNull($userProperties3);
         $this->assertEquals($userProperties2, $userProperties3);
 
@@ -203,13 +201,11 @@ class UsersApiTest extends ArtikTestCase
     public function testGetUserRules()
     {
 
-        $users_api = new Api\UsersApi(self::$api_client);
-
         // Load parameters to be used during test
         $userId = static::$artikParams['user1']['id'];
 
         // Read
-        $rulesEnvelope = $users_api->GetUserRules($userId, false, null, null);
+        $rulesEnvelope = self::$users_api->GetUserRules($userId, false, null, null);
         $this->assertNotNull($rulesEnvelope);
         $this->assertNotNull($rulesEnvelope->getData());
 
