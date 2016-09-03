@@ -123,7 +123,14 @@ class MessagesApiTest extends ArtikTestCase
      */
     public function testGetFieldPresence()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$startDate = null;
+        //$endDate = null;
+        //$interval = null;
+        //$sdid = null;
+        //$fieldPresence = null;
+        //$fieldPresenceEnvelope = self::$messages_api->GetFieldPresence($startDate, $endDate, $interval, $sdid, $fieldPresence);
+        //$this->assertInstanceOf('ArtikCloud\Model\FieldPresenceEnvelope', $fieldPresenceEnvelope, 'Response must be an instance of ArtikCloud\Model\FieldPresenceEnvelope');
     }
 
     /**
