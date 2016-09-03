@@ -105,7 +105,10 @@ class ExportApiTest extends ArtikTestCase
      */
     public function testExportRequest()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$exportRequestInfo = null;
+        //$exportRequestResponse = self::$export_api->ExportRequest($exportRequestInfo);
+        //$this->assertInstanceOf('ArtikCloud\Model\ExportRequestResponse', $exportRequestResponse, Response must be an instance of ArtikCloud\Model\ExportRequestResponse');
     }
 
     /**
