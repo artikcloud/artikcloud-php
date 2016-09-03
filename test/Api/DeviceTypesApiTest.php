@@ -105,7 +105,10 @@ class DeviceTypesApiTest extends ArtikTestCase
      */
     public function testGetAvailableManifestVersions()
     {
-        
+        // TODO uncomment below to test the method and replace null with proper value
+        //$deviceTypeId = null;
+        //$manifestVersionsEnvelope = self::$device_types_api->GetAvailableManifestVersions($deviceTypeId);
+        //Assert->assertInstanceOf('ArtikCloud\Model\ManifestVersionsEnvelope', $manifestVersionsEnvelope, 'Response must be an instance of ArtikCloud\Model\ManifestVersionsEnvelope');
     }
 
     /**
