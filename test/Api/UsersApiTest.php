@@ -173,7 +173,7 @@ class UsersApiTest extends ArtikTestCase
      */
     public function testGetUserProperties()
     {
-        
+
         $users_api = new Api\UsersApi(self::$api_client);
 
         // Load parameters to be used during test
@@ -225,6 +225,16 @@ class UsersApiTest extends ArtikTestCase
     public function testGetUserRules()
     {
 
+        $users_api = new Api\UsersApi(self::$api_client);
+
+        // Load parameters to be used during test
+        $userId = static::$artikParams['user1']['id'];
+
+        // Read
+        $rulesEnvelope = $users_api->GetUserRules($userId, false, null, null);
+        $this->assertNotNull($rulesEnvelope);
+        $this->assertNotNull($rulesEnvelope->getData());
+        
     }
 
     /**
