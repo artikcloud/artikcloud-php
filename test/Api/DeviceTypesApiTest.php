@@ -119,7 +119,10 @@ class DeviceTypesApiTest extends ArtikTestCase
      */
     public function testGetDeviceType()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$deviceTypeId = null;
+        //$deviceTypeEnvelope = self::$device_types_api->GetDeviceType($deviceTypeId);
+        //Assert->assertInstanceOf('ArtikCloud\Model\DeviceTypeEnvelope', $deviceTypeEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceTypeEnvelope');
     }
 
     /**
