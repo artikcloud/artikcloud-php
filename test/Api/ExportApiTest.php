@@ -149,7 +149,10 @@ class ExportApiTest extends ArtikTestCase
      */
     public function testGetExportStatus()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$exportId = null;
+        //$exportStatusResponse = self::$export_api->GetExportStatus($exportId);
+        //$this->assertInstanceOf('ArtikCloud\Model\ExportStatusResponse', $exportStatusResponse, 'Response must be an instance of ArtikCloud\Model\ExportStatusResponse');
     }
 
 }
