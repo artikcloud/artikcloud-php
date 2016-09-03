@@ -176,10 +176,10 @@ class DevicesApiTest extends ArtikTestCase
         $data = $presenceEnvelope->getData();
         $sdid = $presenceEnvelope->getSdid();
 
-        $this->assertEquals($deviceId, $sdid);
+        $this->assertEquals($deviceId, $sdid, 'Sdids must match');
         $this->assertNotNull($data->getLastSeenOn(), 'lastSeenOn');
         $this->assertNotNull($data->getConnected(), 'connected');
-        
+
     }
 
     /**
