@@ -170,6 +170,16 @@ class DevicesApiTest extends ArtikTestCase
     public function testGetDevicePresence()
     {
 
+        $deviceId = static::$artikParams['device1']['id'];
+        $presenceEnvelope = static::$devices_api->GetDevicePresence($deviceId);
+
+        $data = $presenceEnvelope->getData();
+        $sdid = $presenceEnvelope->getSdid();
+
+        $this->assertEquals($deviceId, $sdid);
+        $this->assertNotNull($data->getLastSeenOn(), 'lastSeenOn');
+        $this->assertNotNull($data->getConnected(), 'connected');
+        
     }
 
     /**
