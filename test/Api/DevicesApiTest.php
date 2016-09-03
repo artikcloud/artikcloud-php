@@ -107,6 +107,11 @@ class DevicesApiTest extends ArtikTestCase
     public function testAddDevice()
     {
 
+        // TODO: uncomment below to test the method and replace null with proper value
+        // $device = null;
+        // $deviceEnvelope = static::$devices_api->AddDevice($device);
+        // $this->assertInstanceOf('ArtikCloud\Model\DeviceEnvelope', $deviceEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceEnvelope');
+
     }
 
     /**
