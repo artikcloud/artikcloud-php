@@ -93,7 +93,7 @@ class UsersApiTest extends ArtikTestCase
      */
     public static function tearDownAfterClass()
     {
-
+        self::$api_client = null;
     }
 
     /**
@@ -111,28 +111,6 @@ class UsersApiTest extends ArtikTestCase
         $this->assertInstanceOf('ArtikCloud\Model\DeviceTypesEnvelope', $response);
         $this->assertNotNull($response, 'Call to GetUserDeviceTypes returned null');
         $this->assertNotNull($response->getData()->getDeviceTypes(), 'Call to GetUserDeviceTypes returned an empty device list');
-    }
-
-    /**
-     * Test case for createUserProperties
-     *
-     * Create User Application Properties.
-     *
-     */
-    public function testCreateUserProperties()
-    {
-
-    }
-
-    /**
-     * Test case for deleteUserProperties
-     *
-     * Delete User Application Properties.
-     *
-     */
-    public function testDeleteUserProperties()
-    {
-
     }
 
     /**
@@ -234,18 +212,6 @@ class UsersApiTest extends ArtikTestCase
         $rulesEnvelope = $users_api->GetUserRules($userId, false, null, null);
         $this->assertNotNull($rulesEnvelope);
         $this->assertNotNull($rulesEnvelope->getData());
-        
-    }
-
-    /**
-     * Test case for updateUserProperties
-     *
-     * Update User Application Properties.
-     *
-     */
-    public function testUpdateUserProperties()
-    {
 
     }
-
 }
