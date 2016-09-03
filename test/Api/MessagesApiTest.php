@@ -157,7 +157,13 @@ class MessagesApiTest extends ArtikTestCase
      */
     public function testGetMessageAggregates()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$sdid = null;
+        //$field = null;
+        //$startDate = null;
+        //$endDate = null;
+        //$aggregatesResponse = self::$messages_api->GetMessageAggregates($sdid, $field, $startDate, $endDate);
+        //$this->assertInstanceOf('ArtikCloud\Model\AggregatesResponse', $aggregatesResponse, 'Response must be an instance of ArtikCloud\Model\AggregatesResponse');
     }
 
     /**
