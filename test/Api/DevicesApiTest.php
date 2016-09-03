@@ -191,6 +191,11 @@ class DevicesApiTest extends ArtikTestCase
     public function testGetDeviceToken()
     {
 
+        // TODO: uncomment below to test the method and replace null with proper value
+        // $deviceId = null;
+        // $deviceTokenEnvelope = static::$devices_api->GetDeviceToken($deviceId);
+        // $this->assertInstanceOf('ArtikCloud\Model\DeviceTokenEnvelope', $deviceTokenEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceTokenEnvelope');
+
     }
 
     /**
