@@ -138,7 +138,11 @@ class DevicesApiTest extends ArtikTestCase
      */
     public function testDeleteDeviceToken()
     {
-
+        // TODO: uncomment below to test the method and replace null with proper value
+        // $deviceId = null;
+        // $deleteDeviceToken = static::$devices_api->DeleteDeviceToken($deviceId);
+        // $this->assertInstanceOf('ArtikCloud\Model\DeviceTokenEnvelope', $deleteDeviceToken, 'Response must be an instance of ArtikCloud\Model\DeviceTokenEnvelope');
+        
     }
 
     /**
