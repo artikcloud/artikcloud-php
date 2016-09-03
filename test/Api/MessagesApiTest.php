@@ -69,7 +69,7 @@ class MessagesApiTest extends ArtikTestCase
         self::$api_client = new ApiClient();
         self::$api_client->getConfig()->setAccessToken(static::$artikParams['user1']['token']);
 
-        self::$messages_api = new Api\UsersApi(self::$api_client);
+        self::$messages_api = new Api\MessagesApi(self::$api_client);
     }
 
     /**
@@ -174,6 +174,19 @@ class MessagesApiTest extends ArtikTestCase
      */
     public function testGetMessageSnapshots()
     {
+
+        // Get device id
+        $sdids = static::$artikParams['device1']['id'];
+
+        // Get message Snapshots
+        $snapshots = self::$messages_api->GetMessageSnapshots($sdids, false);
+
+        // Assertions
+        $data = $snapshots->getData();
+        $stepsInfo = $data[0]->getData()['steps'];
+        $this->assertEquals($sdids, $snapshots->getSdids(), 'Sdids must match');
+        $this->assertEquals($sdids, $data[0]->getSdid(), 'SDID must match');
+        $this->assertEquals($stepsInfo['value'], 5, 'Steps must be 5');
 
     }
 
