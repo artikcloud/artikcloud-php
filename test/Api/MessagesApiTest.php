@@ -105,7 +105,14 @@ class MessagesApiTest extends ArtikTestCase
      */
     public function testGetAggregatesHistogram()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$startDate = null;
+        //$endDate = null;
+        //$sdid = null;
+        //$field = null;
+        //$interval = null;
+        //$aggregatesHistogramResponse = self::$messages_api->GetAggregatesHistogram($startDate, $endDate, $sdid, $field, $interval);
+        //$this->assertInstanceOf('ArtikCloud\Model\AggregatesHistogramResponse', $aggregatesHistogramResponse, 'Response must be an instance of ArtikCloud\Model\AggregatesHistogramResponse');
     }
 
     /**
