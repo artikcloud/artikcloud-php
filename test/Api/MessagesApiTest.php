@@ -46,6 +46,11 @@ use \ArtikCloud\ApiException;
 use \ArtikCloud\ObjectSerializer;
 use \ArtikCloudTests\ArtikTestCase;
 
+// Models
+use \ArtikCloud\Model\Action;
+use \ArtikCloud\Model\Actions;
+use \ArtikCloud\Model\ActionArray;
+
 /**
  * MessagesApiTest Class Doc Comment
  *
@@ -256,4 +261,49 @@ class MessagesApiTest extends ArtikTestCase
       $this->assertSame($steps, 5);
     }
 
+    /**
+     * Test case for sendAction
+     *
+     * Send Message Action
+     *
+     */
+    public function testSendAction() {
+
+      $ddid = static::$artikParams['device4']['id'];
+      $device_token = static::$artikParams['device4']['token'];
+
+      self::$api_client->getConfig()->setAccessToken($device_token);
+      self::$messages_api = new Api\MessagesApi(self::$api_client);
+
+      // Send action
+      $action = new Action();
+      $action->setName('setVolume');
+      $action->setParameters(['volume' => 5]);
+
+      $actionArray = new ActionArray();
+      $actionArray->setActions([$action]);
+
+      $actions = new Actions();
+      $actions->setDdid($ddid);
+      $actions->setTs(time());
+      $actions->setData($actionArray);
+
+      $response = self::$messages_api->SendActions($actions);
+      $mid = $response->getData()->getMid();
+
+      sleep(2);
+
+      // Get normalized actions
+      $normalizedActionsEnvelope = self::$messages_api->GetNormalizedActions(null, null, $mid, null, null, null, null, null);
+      $data = $normalizedActionsEnvelope->getData();
+      $actionRx = $data[0]->getData()->getActions()[0];
+      $volume = $actionRx->getParameters()['volume'];
+
+      // Assertions
+      $this->assertEquals(1, $normalizedActionsEnvelope->getSize());
+      $this->assertEquals('setVolume', $actionRx->getName());
+      $this->assertNotNull($volume, 'Volume should not be null');
+      $this->assertEquals(5, $volume[0]);
+
+    }
 }
