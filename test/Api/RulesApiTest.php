@@ -135,7 +135,10 @@ class RulesApiTest extends ArtikTestCase
      */
     public function testGetRule()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$ruleId = null;
+        //$ruleEnvelope = static::$rules_api->GetRule($ruleId);
+        //$this->assertInstanceOf('ArtikCloud\Model\RuleEnvelope, $ruleEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceTokenEnvelope');
     }
 
     /**
