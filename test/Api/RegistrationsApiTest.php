@@ -134,7 +134,10 @@ class RegistrationsApiTest extends ArtikTestCase
      */
     public function testUnregisterDevice()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$deviceId = null;
+        //$unregisterDeviceResponseEnvelope static::$registrations_api->UnregisterDevice($deviceId);
+        //$this->assertInstanceOf('ArtikCloud\Model\UnregisterDeviceResponseEnvelope', $unregisterDeviceResponseEnvelope, 'Response must be an instance of ArtikCloud\Model\UnregisterDeviceResponseEnvelope');
     }
 
 }
