@@ -198,7 +198,19 @@ class MessagesApiTest extends ArtikTestCase
      */
     public function testGetNormalizedMessages()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$uid = null;
+        //$sdid = null;
+        //$mid = null;
+        //$fieldPresence = null;
+        //$filter = null;
+        //$offset = null;
+        //$count = null;
+        //$startDate = null;
+        //$endDate = null;
+        //$order = null;
+        //$normalizedMessagesEnvelope = self::$messages_api->GetNormalizedMessages($uid, $sdid, $mid, $fieldPresence, $filter, $offset, $count, $startDate, $endDate, $order);
+        //$this->assertInstanceOf('ArtikCloud\Model\NormalizedMessagesEnvelope', $normalizedMessagesEnvelope, 'Response must be an instance of ArtikCloud\Model\NormalizedMessagesEnvelope');
     }
 
     /**
@@ -208,8 +220,8 @@ class MessagesApiTest extends ArtikTestCase
      *
      */
     public function test_sendMessage() {
-      $device_token = 'dc43d12e2b59495daf94631e6ddfe3e8';
-      $device_sdid = '19da42ee01414722a6ad1224097c38d4';
+      $device_token = static::artikParams['device1']['token'];
+      $device_sdid = static::artikParams['device1']['id'];
 
       $api_client = new ApiClient();
       $api_client->getConfig()->setAccessToken($device_token);
