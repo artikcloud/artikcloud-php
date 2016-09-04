@@ -107,6 +107,12 @@ class TokensApiTest extends ArtikTestCase
     public function testTokenInfo()
     {
 
+        $tokenInfo = static::$tokens_api->TokenInfo();
+        $data = $tokenInfo->getData();
+
+        $this->assertNotNull($tokenInfo, 'Response must not be null');
+        $this->assertNotNull($data->getExpiresIn(), 'ExpiresIn must not be null');
+
     }
 
     /**
