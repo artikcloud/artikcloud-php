@@ -136,7 +136,10 @@ class TagsApiTest extends ArtikTestCase
      */
     public function testGetTagsByCategories()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$categories = null;
+        //$tagsEnvelope = static::$tags_api->GetTagsByCategories($categories);
+        //$this->assertInstanceOf('ArtikCloud\Model\TagsEnvelope, $tagsEnvelope, 'Response must be an instance of ArtikCloud\Model\TagsEnvelope');
     }
 
 }
