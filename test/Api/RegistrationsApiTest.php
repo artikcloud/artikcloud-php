@@ -120,7 +120,10 @@ class RegistrationsApiTest extends ArtikTestCase
      */
     public function testGetRequestStatusForUser()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$requestId = null;
+        //$deviceRegStatusResponseEnvelope static::$registrations_api->GetRequestStatusForUser($requestId);
+        //$this->assertInstanceOf('ArtikCloud\Model\DeviceRegStatusResponseEnvelope', $deviceRegStatusResponseEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceRegStatusResponseEnvelope');
     }
 
     /**
