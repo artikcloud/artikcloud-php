@@ -123,7 +123,10 @@ class TokensApiTest extends ArtikTestCase
      */
     public function testRefreshToken()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        // $refreshToken = null;
+        // $refreshTokenResponse = static::$tokens_api->RefreshToken($refreshToken);
+        // $this->assertNotNull($refreshTokenResponse, 'Response must not be null');
     }
 
 }
