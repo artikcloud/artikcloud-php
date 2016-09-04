@@ -110,7 +110,7 @@ class RulesApiTest extends ArtikTestCase
         //$ruleInfo = null;
         //$userId = null;
         //$ruleEnvelope = static::$rules_api->CreateRule($ruleInfo, $userId);
-        //$this->assertInstanceOf('ArtikCloud\Model\RuleEnvelope, $ruleEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceTokenEnvelope');
+        //$this->assertInstanceOf('ArtikCloud\Model\RuleEnvelope, $ruleEnvelope, 'Response must be an instance of ArtikCloud\Model\RuleEnvelope');
     }
 
     /**
@@ -124,7 +124,7 @@ class RulesApiTest extends ArtikTestCase
         // TODO uncomment below to test the method and replace null with proper value
         //$ruleId = null;
         //$ruleEnvelope = static::$rules_api->DeleteRule($ruleId);
-        //$this->assertInstanceOf('ArtikCloud\Model\RuleEnvelope, $ruleEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceTokenEnvelope');
+        //$this->assertInstanceOf('ArtikCloud\Model\RuleEnvelope, $ruleEnvelope, 'Response must be an instance of ArtikCloud\Model\RuleEnvelope');
     }
 
     /**
@@ -138,7 +138,7 @@ class RulesApiTest extends ArtikTestCase
         // TODO uncomment below to test the method and replace null with proper value
         //$ruleId = null;
         //$ruleEnvelope = static::$rules_api->GetRule($ruleId);
-        //$this->assertInstanceOf('ArtikCloud\Model\RuleEnvelope, $ruleEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceTokenEnvelope');
+        //$this->assertInstanceOf('ArtikCloud\Model\RuleEnvelope, $ruleEnvelope, 'Response must be an instance of ArtikCloud\Model\RuleEnvelope');
     }
 
     /**
@@ -149,7 +149,11 @@ class RulesApiTest extends ArtikTestCase
      */
     public function testUpdateRule()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$ruleId = null;
+        //$ruleInfo = null;
+        //$ruleEnvelope = static::$rules_api->UpdateRule($ruleId, $ruleInfo);
+        //$this->assertInstanceOf('ArtikCloud\Model\RuleEnvelope, $ruleEnvelope, 'Response must be an instance of ArtikCloud\Model\RuleEnvelope');
     }
 
 }
