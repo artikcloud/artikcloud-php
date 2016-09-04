@@ -220,8 +220,8 @@ class MessagesApiTest extends ArtikTestCase
      *
      */
     public function test_sendMessage() {
-      $device_token = static::artikParams['device1']['token'];
-      $device_sdid = static::artikParams['device1']['id'];
+      $device_token = static::$artikParams['device1']['token'];
+      $device_sdid = static::$artikParams['device1']['id'];
 
       $api_client = new ApiClient();
       $api_client->getConfig()->setAccessToken($device_token);
