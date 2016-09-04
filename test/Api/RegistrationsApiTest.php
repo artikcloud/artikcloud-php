@@ -109,7 +109,7 @@ class RegistrationsApiTest extends ArtikTestCase
         // TODO uncomment below to test the method and replace null with proper value
         //$registrationInfo = null;
         //$deviceRegConfirmUserResponseEnvelope static::$registrations_api->ConfirmUser($registrationInfo);
-        //$this->assertInstanceOf('ArtikCloud\Model\DeviceRegConfirmUserResponseEnvelope', $deviceEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceRegConfirmUserResponseEnvelope');
+        //$this->assertInstanceOf('ArtikCloud\Model\DeviceRegConfirmUserResponseEnvelope', $deviceRegConfirmUserResponseEnvelope, 'Response must be an instance of ArtikCloud\Model\DeviceRegConfirmUserResponseEnvelope');
     }
 
     /**
