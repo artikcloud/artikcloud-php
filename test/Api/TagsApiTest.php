@@ -119,7 +119,13 @@ class TagsApiTest extends ArtikTestCase
      */
     public function testGetTagSuggestions()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$entityType = null;
+        //$tags = null;
+        //$name = null;
+        //$count = null;
+        //$tagsEnvelope = static::$tags_api->GetTagSuggestions($entityType, $tags, $name, $count);
+        //$this->assertInstanceOf('ArtikCloud\Model\TagsEnvelope, $tagsEnvelope, 'Response must be an instance of ArtikCloud\Model\TagsEnvelope');
     }
 
     /**
