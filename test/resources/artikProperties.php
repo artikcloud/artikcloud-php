@@ -37,7 +37,7 @@
             'id' => '04ddbd35d57d4d7b8f07f219c44457b2',
             'name' => 'maneesh',
             'fullname' => 'Maneesh Sahu',
-            'token' => 'fa460261b858484583097ecb331faaa8',
+            'token' => '369d8f0f5f50483fa1c46b12e5991d84',
             'email' => 'maneesh.sahu@ssi.samsung.com',
             'aid' => 'b6951bf387b84f63b38911ae35d65e28',
             'createdon' => '1406839290000',

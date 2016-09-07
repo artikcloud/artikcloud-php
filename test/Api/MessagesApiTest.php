@@ -44,6 +44,12 @@ use \ArtikCloud\Configuration;
 use \ArtikCloud\ApiClient;
 use \ArtikCloud\ApiException;
 use \ArtikCloud\ObjectSerializer;
+use \ArtikCloudTests\ArtikTestCase;
+
+// Models
+use \ArtikCloud\Model\Action;
+use \ArtikCloud\Model\Actions;
+use \ArtikCloud\Model\ActionArray;
 
 /**
  * MessagesApiTest Class Doc Comment
@@ -54,15 +60,21 @@ use \ArtikCloud\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class MessagesApiTest extends \PHPUnit_Framework_TestCase
+class MessagesApiTest extends ArtikTestCase
 {
+
+    public static $api_client;
+    public static $messages_api;
 
     /**
      * Setup before running any test cases
      */
     public static function setUpBeforeClass()
     {
+        self::$api_client = new ApiClient();
+        self::$api_client->getConfig()->setAccessToken(static::$artikParams['user1']['token']);
 
+        self::$messages_api = new Api\MessagesApi(self::$api_client);
     }
 
     /**
@@ -86,7 +98,8 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
      */
     public static function tearDownAfterClass()
     {
-
+        self::$api_client = null;
+        self::$messages_api = null;
     }
 
     /**
@@ -97,7 +110,14 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetAggregatesHistogram()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$startDate = null;
+        //$endDate = null;
+        //$sdid = null;
+        //$field = null;
+        //$interval = null;
+        //$aggregatesHistogramResponse = self::$messages_api->GetAggregatesHistogram($startDate, $endDate, $sdid, $field, $interval);
+        //$this->assertInstanceOf('ArtikCloud\Model\AggregatesHistogramResponse', $aggregatesHistogramResponse, 'Response must be an instance of ArtikCloud\Model\AggregatesHistogramResponse');
     }
 
     /**
@@ -108,7 +128,14 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetFieldPresence()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$startDate = null;
+        //$endDate = null;
+        //$interval = null;
+        //$sdid = null;
+        //$fieldPresence = null;
+        //$fieldPresenceEnvelope = self::$messages_api->GetFieldPresence($startDate, $endDate, $interval, $sdid, $fieldPresence);
+        //$this->assertInstanceOf('ArtikCloud\Model\FieldPresenceEnvelope', $fieldPresenceEnvelope, 'Response must be an instance of ArtikCloud\Model\FieldPresenceEnvelope');
     }
 
     /**
@@ -119,7 +146,12 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetLastNormalizedMessages()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$count = null;
+        //$sdids = null;
+        //$fieldPresence = null;
+        //$normalizedMessagesEnvelope = self::$messages_api->GetLastNormalizedMessages($count, $sdids, $fieldPresence);
+        //$this->assertInstanceOf('ArtikCloud\Model\NormalizedMessagesEnvelope', $normalizedMessagesEnvelope, 'Response must be an instance of ArtikCloud\Model\NormalizedMessagesEnvelope');
     }
 
     /**
@@ -130,7 +162,13 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetMessageAggregates()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$sdid = null;
+        //$field = null;
+        //$startDate = null;
+        //$endDate = null;
+        //$aggregatesResponse = self::$messages_api->GetMessageAggregates($sdid, $field, $startDate, $endDate);
+        //$this->assertInstanceOf('ArtikCloud\Model\AggregatesResponse', $aggregatesResponse, 'Response must be an instance of ArtikCloud\Model\AggregatesResponse');
     }
 
     /**
@@ -142,6 +180,19 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
     public function testGetMessageSnapshots()
     {
 
+        // Get device id
+        $sdids = static::$artikParams['device1']['id'];
+
+        // Get message Snapshots
+        $snapshots = self::$messages_api->GetMessageSnapshots($sdids, false);
+
+        // Assertions
+        $data = $snapshots->getData();
+        $stepsInfo = $data[0]->getData()['steps'];
+        $this->assertEquals($sdids, $snapshots->getSdids(), 'Sdids must match');
+        $this->assertEquals($sdids, $data[0]->getSdid(), 'SDID must match');
+        $this->assertEquals($stepsInfo['value'], 5, 'Steps must be 5');
+
     }
 
     /**
@@ -152,7 +203,19 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetNormalizedMessages()
     {
-
+        // TODO uncomment below to test the method and replace null with proper value
+        //$uid = null;
+        //$sdid = null;
+        //$mid = null;
+        //$fieldPresence = null;
+        //$filter = null;
+        //$offset = null;
+        //$count = null;
+        //$startDate = null;
+        //$endDate = null;
+        //$order = null;
+        //$normalizedMessagesEnvelope = self::$messages_api->GetNormalizedMessages($uid, $sdid, $mid, $fieldPresence, $filter, $offset, $count, $startDate, $endDate, $order);
+        //$this->assertInstanceOf('ArtikCloud\Model\NormalizedMessagesEnvelope', $normalizedMessagesEnvelope, 'Response must be an instance of ArtikCloud\Model\NormalizedMessagesEnvelope');
     }
 
     /**
@@ -162,8 +225,8 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function test_sendMessage() {
-      $device_token = 'dc43d12e2b59495daf94631e6ddfe3e8';
-      $device_sdid = '19da42ee01414722a6ad1224097c38d4';
+      $device_token = static::$artikParams['device1']['token'];
+      $device_sdid = static::$artikParams['device1']['id'];
 
       $api_client = new ApiClient();
       $api_client->getConfig()->setAccessToken($device_token);
@@ -198,4 +261,49 @@ class MessagesApiTest extends \PHPUnit_Framework_TestCase
       $this->assertSame($steps, 5);
     }
 
+    /**
+     * Test case for sendAction
+     *
+     * Send Message Action
+     *
+     */
+    public function testSendAction() {
+
+      $ddid = static::$artikParams['device4']['id'];
+      $device_token = static::$artikParams['device4']['token'];
+
+      self::$api_client->getConfig()->setAccessToken($device_token);
+      self::$messages_api = new Api\MessagesApi(self::$api_client);
+
+      // Send action
+      $action = new Action();
+      $action->setName('setVolume');
+      $action->setParameters(['volume' => 5]);
+
+      $actionArray = new ActionArray();
+      $actionArray->setActions([$action]);
+
+      $actions = new Actions();
+      $actions->setDdid($ddid);
+      $actions->setTs(time());
+      $actions->setData($actionArray);
+
+      $response = self::$messages_api->SendActions($actions);
+      $mid = $response->getData()->getMid();
+
+      sleep(2);
+
+      // Get normalized actions
+      $normalizedActionsEnvelope = self::$messages_api->GetNormalizedActions(null, null, $mid, null, null, null, null, null);
+      $data = $normalizedActionsEnvelope->getData();
+      $actionRx = $data[0]->getData()->getActions()[0];
+      $volume = $actionRx->getParameters()['volume'];
+
+      // Assertions
+      $this->assertEquals(1, $normalizedActionsEnvelope->getSize());
+      $this->assertEquals('setVolume', $actionRx->getName());
+      $this->assertNotNull($volume, 'Volume should not be null');
+      $this->assertEquals(5, $volume[0]);
+
+    }
 }
