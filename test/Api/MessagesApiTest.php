@@ -191,7 +191,7 @@ class MessagesApiTest extends ArtikTestCase
         $stepsInfo = $data[0]->getData()['steps'];
         $this->assertEquals($sdids, $snapshots->getSdids(), 'Sdids must match');
         $this->assertEquals($sdids, $data[0]->getSdid(), 'SDID must match');
-        $this->assertEquals($stepsInfo['value'], 5, 'Steps must be 5');
+        $this->assertEquals($stepsInfo['value'], 500, 'Steps must be 500');
 
     }
 
