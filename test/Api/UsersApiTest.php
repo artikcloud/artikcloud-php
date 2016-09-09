@@ -101,6 +101,21 @@ class UsersApiTest extends ArtikTestCase
     }
 
     /**
+     * Generates a pseudo-random string of the specified length
+     */
+    public static function randomString($length = 4)
+    {
+
+        $newString = '';
+
+        for ($i = 0; $i <= $length; $i++) {
+            $newString .= chr(rand(97, 122));
+        }
+
+        return $newString;
+    }
+
+    /**
      * Test case for GetUserDeviceTypes
      *
      * Create User Application Properties.
@@ -156,6 +171,9 @@ class UsersApiTest extends ArtikTestCase
         $userId = static::$artikParams['user1']['id'];
         $aid = static::$artikParams['user1']['aid'];
 
+        // Generate temporary property
+        $property = static::randomString();
+
         try {
             // Read
             $userProperties = self::$users_api->GetUserProperties($userId, $aid);
@@ -167,7 +185,7 @@ class UsersApiTest extends ArtikTestCase
 
                 // Create
                 $appProperties = new AppProperties();
-                $appProperties->setProperties('abc=def');
+                $appProperties->setProperties($property);
 
                 $userProperties = self::$users_api->CreateUserProperties($userId, $appProperties, $aid);
             } else {
@@ -180,10 +198,10 @@ class UsersApiTest extends ArtikTestCase
 
         // Update
         $appProperties2 = new AppProperties();
-        $appProperties2->setProperties('mno=pqr');
+        $appProperties2->setProperties($property);
         $userProperties2 = self::$users_api->UpdateUserProperties($userId, $appProperties2, $aid);
         $this->assertNotNull($userProperties2);
-        $this->assertEquals('mno=pqr', $appProperties2->getProperties(), 'Properties must be the same');
+        $this->assertEquals($property, $appProperties2->getProperties(), 'Properties must be the same ($property)');
 
         // Delete
         $userProperties3 = self::$users_api->DeleteUserProperties($userId, $aid);
