@@ -1,6 +1,6 @@
 {
     "name": "artikcloud/artikcloud-php",
-    "version": "2.0.5",
+    "version": "2.0.6-SNAPSHOT",
     "description": "This SDK helps you connect your PHP scripts to ARTIK Cloud. The SDK exposes a number of methods to easily execute REST API calls to ARTIK Cloud",
     "keywords": [
         "php",
@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": ">=5.4",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*"

@@ -384,6 +384,113 @@ class DeviceTypesApi
     }
 
     /**
+     * Operation getDeviceTypesByApplication
+     *
+     * Get Device Types by Application
+     *
+     * @param string $app_id Application ID. (required)
+     * @param bool $product_info Flag to include the associated ProductInfo if present (optional)
+     * @param int $count Desired count of items in the result set. (optional)
+     * @param int $offset Offset for pagination. (optional)
+     * @return \ArtikCloud\Model\DeviceTypesEnvelope
+     * @throws \ArtikCloud\ApiException on non-2xx response
+     */
+    public function getDeviceTypesByApplication($app_id, $product_info = null, $count = null, $offset = null)
+    {
+        list($response) = $this->getDeviceTypesByApplicationWithHttpInfo($app_id, $product_info, $count, $offset);
+        return $response;
+    }
+
+    /**
+     * Operation getDeviceTypesByApplicationWithHttpInfo
+     *
+     * Get Device Types by Application
+     *
+     * @param string $app_id Application ID. (required)
+     * @param bool $product_info Flag to include the associated ProductInfo if present (optional)
+     * @param int $count Desired count of items in the result set. (optional)
+     * @param int $offset Offset for pagination. (optional)
+     * @return Array of \ArtikCloud\Model\DeviceTypesEnvelope, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ArtikCloud\ApiException on non-2xx response
+     */
+    public function getDeviceTypesByApplicationWithHttpInfo($app_id, $product_info = null, $count = null, $offset = null)
+    {
+        // verify the required parameter 'app_id' is set
+        if ($app_id === null) {
+            throw new \InvalidArgumentException('Missing the required parameter $app_id when calling getDeviceTypesByApplication');
+        }
+        // parse inputs
+        $resourcePath = "/applications/{appId}/devicetypes";
+        $httpBody = '';
+        $queryParams = array();
+        $headerParams = array();
+        $formParams = array();
+        $_header_accept = $this->apiClient->selectHeaderAccept(array('application/json'));
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(array());
+
+        // query params
+        if ($product_info !== null) {
+            $queryParams['productInfo'] = $this->apiClient->getSerializer()->toQueryValue($product_info);
+        }
+        // query params
+        if ($count !== null) {
+            $queryParams['count'] = $this->apiClient->getSerializer()->toQueryValue($count);
+        }
+        // query params
+        if ($offset !== null) {
+            $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
+        }
+        // path params
+        if ($app_id !== null) {
+            $resourcePath = str_replace(
+                "{" . "appId" . "}",
+                $this->apiClient->getSerializer()->toPathValue($app_id),
+                $resourcePath
+            );
+        }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // this endpoint requires OAuth (access token)
+        if (strlen($this->apiClient->getConfig()->getAccessToken()) !== 0) {
+            $headerParams['Authorization'] = 'Bearer ' . $this->apiClient->getConfig()->getAccessToken();
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'GET',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\ArtikCloud\Model\DeviceTypesEnvelope',
+                '/applications/{appId}/devicetypes'
+            );
+
+            return array($this->apiClient->getSerializer()->deserialize($response, '\ArtikCloud\Model\DeviceTypesEnvelope', $httpHeader), $statusCode, $httpHeader);
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                default:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ArtikCloud\Model\DeviceTypesEnvelope', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
      * Operation getLatestManifestProperties
      *
      * Get Latest Manifest Properties
