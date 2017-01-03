@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**getAvailableManifestVersions**](DeviceTypesApi.md#getAvailableManifestVersions) | **GET** /devicetypes/{deviceTypeId}/availablemanifestversions | Get Available Manifest Versions
 [**getDeviceType**](DeviceTypesApi.md#getDeviceType) | **GET** /devicetypes/{deviceTypeId} | Get Device Type
 [**getDeviceTypes**](DeviceTypesApi.md#getDeviceTypes) | **GET** /devicetypes | Get Device Types
+[**getDeviceTypesByApplication**](DeviceTypesApi.md#getDeviceTypesByApplication) | **GET** /applications/{appId}/devicetypes | Get Device Types by Application
 [**getLatestManifestProperties**](DeviceTypesApi.md#getLatestManifestProperties) | **GET** /devicetypes/{deviceTypeId}/manifests/latest/properties | Get Latest Manifest Properties
 [**getManifestProperties**](DeviceTypesApi.md#getManifestProperties) | **GET** /devicetypes/{deviceTypeId}/manifests/{version}/properties | Get manifest properties
 
@@ -145,6 +146,60 @@ Name | Type | Description  | Notes
  **offset** | **int**| Offset for pagination. | [optional]
  **count** | **int**| Desired count of items in the result set | [optional]
  **tags** | **string**| Elements tagged with the list of tags. (comma separated) | [optional]
+
+### Return type
+
+[**\ArtikCloud\Model\DeviceTypesEnvelope**](../Model/DeviceTypesEnvelope.md)
+
+### Authorization
+
+[artikcloud_oauth](../../README.md#artikcloud_oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **getDeviceTypesByApplication**
+> \ArtikCloud\Model\DeviceTypesEnvelope getDeviceTypesByApplication($app_id, $product_info, $count, $offset)
+
+Get Device Types by Application
+
+Get Device Types by Application
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: artikcloud_oauth
+ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new ArtikCloud\Api\DeviceTypesApi();
+$app_id = "app_id_example"; // string | Application ID.
+$product_info = true; // bool | Flag to include the associated ProductInfo if present
+$count = 56; // int | Desired count of items in the result set.
+$offset = 56; // int | Offset for pagination.
+
+try {
+    $result = $api_instance->getDeviceTypesByApplication($app_id, $product_info, $count, $offset);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DeviceTypesApi->getDeviceTypesByApplication: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **app_id** | **string**| Application ID. |
+ **product_info** | **bool**| Flag to include the associated ProductInfo if present | [optional]
+ **count** | **int**| Desired count of items in the result set. | [optional]
+ **offset** | **int**| Offset for pagination. | [optional]
 
 ### Return type
 
