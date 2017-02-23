@@ -1,7 +1,7 @@
 ARTIK Cloud PHP SDK
 ===================
 
-This SDK helps you connect your PHP scripts to ARTIK Cloud. The SDK exposes a number of methods to easily execute REST API calls to ARTIK Cloud.
+This SDK helps you connect your PHP scripts to ARTIK Cloud. The SDK exposes a number of methods to easily execute REST API calls to ARTIK Cloud. 
 
 ## Requirements
 
@@ -69,7 +69,7 @@ try {
 ?>
 ```
 
-## Documentation for API Endpoints
+## Documentation for API Endpoints 
 
 All URIs are relative to *https://api.artik.cloud/v1.1*
 
