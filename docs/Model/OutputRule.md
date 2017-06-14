@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **created_on** | **int** |  | [optional] 
 **description** | **string** |  | [optional] 
 **enabled** | **bool** |  | [optional] 
-**error** | [**\ArtikCloud\Model\RuleError**](RuleError.md) |  | [optional] 
+**error** | [**\ArtikCloud\ArtikCloud\Model\RuleError**](RuleError.md) |  | [optional] 
 **id** | **string** |  | [optional] 
 **index** | **int** |  | [optional] 
 **invalidated_on** | **int** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **name** | **string** |  | [optional] 
 **rule** | **map[string,object]** |  | [optional] 
 **uid** | **string** |  | [optional] 
-**warning** | [**\ArtikCloud\Model\RuleWarningOutput**](RuleWarningOutput.md) |  | [optional] 
+**warning** | [**\ArtikCloud\ArtikCloud\Model\RuleWarningOutput**](RuleWarningOutput.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getAvailableManifestVersions**
-> \ArtikCloud\Model\ManifestVersionsEnvelope getAvailableManifestVersions($device_type_id)
+> \ArtikCloud\ArtikCloud\Model\ManifestVersionsEnvelope getAvailableManifestVersions($device_type_id)
 
 Get Available Manifest Versions
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\ManifestVersionsEnvelope**](../Model/ManifestVersionsEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\ManifestVersionsEnvelope**](../Model/ManifestVersionsEnvelope.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDeviceType**
-> \ArtikCloud\Model\DeviceTypeEnvelope getDeviceType($device_type_id)
+> \ArtikCloud\ArtikCloud\Model\DeviceTypeEnvelope getDeviceType($device_type_id)
 
 Get Device Type
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTypeEnvelope**](../Model/DeviceTypeEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTypeEnvelope**](../Model/DeviceTypeEnvelope.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDeviceTypes**
-> \ArtikCloud\Model\DeviceTypesEnvelope getDeviceTypes($name, $offset, $count, $tags)
+> \ArtikCloud\ArtikCloud\Model\DeviceTypesEnvelope getDeviceTypes($name, $offset, $count, $tags)
 
 Get Device Types
 
@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTypesEnvelope**](../Model/DeviceTypesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTypesEnvelope**](../Model/DeviceTypesEnvelope.md)
 
 ### Authorization
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDeviceTypesByApplication**
-> \ArtikCloud\Model\DeviceTypesEnvelope getDeviceTypesByApplication($app_id, $product_info, $count, $offset)
+> \ArtikCloud\ArtikCloud\Model\DeviceTypesEnvelope getDeviceTypesByApplication($app_id, $product_info, $count, $offset)
 
 Get Device Types by Application
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTypesEnvelope**](../Model/DeviceTypesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTypesEnvelope**](../Model/DeviceTypesEnvelope.md)
 
 ### Authorization
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLatestManifestProperties**
-> \ArtikCloud\Model\ManifestPropertiesEnvelope getLatestManifestProperties($device_type_id)
+> \ArtikCloud\ArtikCloud\Model\ManifestPropertiesEnvelope getLatestManifestProperties($device_type_id)
 
 Get Latest Manifest Properties
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\ManifestPropertiesEnvelope**](../Model/ManifestPropertiesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\ManifestPropertiesEnvelope**](../Model/ManifestPropertiesEnvelope.md)
 
 ### Authorization
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getManifestProperties**
-> \ArtikCloud\Model\ManifestPropertiesEnvelope getManifestProperties($device_type_id, $version)
+> \ArtikCloud\ArtikCloud\Model\ManifestPropertiesEnvelope getManifestProperties($device_type_id, $version)
 
 Get manifest properties
 
@@ -301,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\ManifestPropertiesEnvelope**](../Model/ManifestPropertiesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\ManifestPropertiesEnvelope**](../Model/ManifestPropertiesEnvelope.md)
 
 ### Authorization
 

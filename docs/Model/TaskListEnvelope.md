@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | **int** | Total | [optional] 
-**data** | [**\ArtikCloud\Model\TaskList**](TaskList.md) | Envelope for task list | [optional] 
-**status_counts** | [**\ArtikCloud\Model\TasksStatusCounts**](TasksStatusCounts.md) | Status counts | [optional] 
+**data** | [**\ArtikCloud\ArtikCloud\Model\TaskList**](TaskList.md) | Envelope for task list | [optional] 
+**status_counts** | [**\ArtikCloud\ArtikCloud\Model\TasksStatusCounts**](TasksStatusCounts.md) | Status counts | [optional] 
 **offset** | **int** | Offset | [optional] 
 **count** | **int** | Count | [optional] 
 

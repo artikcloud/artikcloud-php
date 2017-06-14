@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\ArtikCloud\Model\AggregateData[]**](AggregateData.md) |  | [optional] 
+**data** | [**\ArtikCloud\ArtikCloud\Model\AggregateData[]**](AggregateData.md) |  | [optional] 
 **end_date** | **int** |  | [optional] 
 **field** | **string** |  | [optional] 
 **sdid** | **string** |  | [optional] 

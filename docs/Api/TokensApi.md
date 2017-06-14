@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **checkToken**
-> \ArtikCloud\Model\CheckTokenResponse checkToken($token_info)
+> \ArtikCloud\ArtikCloud\Model\CheckTokenResponse checkToken($token_info)
 
 Check Token
 
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new ArtikCloud\Api\TokensApi();
-$token_info = new \ArtikCloud\Model\TokenRequest(); // \ArtikCloud\Model\TokenRequest | Token object to be checked
+$token_info = new \ArtikCloud\ArtikCloud\Model\TokenRequest(); // \ArtikCloud\ArtikCloud\Model\TokenRequest | Token object to be checked
 
 try {
     $result = $api_instance->checkToken($token_info);
@@ -40,11 +40,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token_info** | [**\ArtikCloud\Model\TokenRequest**](../Model/\ArtikCloud\Model\TokenRequest.md)| Token object to be checked |
+ **token_info** | [**\ArtikCloud\ArtikCloud\Model\TokenRequest**](../Model/\ArtikCloud\ArtikCloud\Model\TokenRequest.md)| Token object to be checked |
 
 ### Return type
 
-[**\ArtikCloud\Model\CheckTokenResponse**](../Model/CheckTokenResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\CheckTokenResponse**](../Model/CheckTokenResponse.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **refreshToken**
-> \ArtikCloud\Model\RefreshTokenResponse refreshToken($grant_type, $refresh_token)
+> \ArtikCloud\ArtikCloud\Model\RefreshTokenResponse refreshToken($grant_type, $refresh_token)
 
 Refresh Token
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\RefreshTokenResponse**](../Model/RefreshTokenResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\RefreshTokenResponse**](../Model/RefreshTokenResponse.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tokenInfo**
-> \ArtikCloud\Model\TokenInfoSuccessResponse tokenInfo()
+> \ArtikCloud\ArtikCloud\Model\TokenInfoSuccessResponse tokenInfo()
 
 Token Info
 
@@ -138,7 +138,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\ArtikCloud\Model\TokenInfoSuccessResponse**](../Model/TokenInfoSuccessResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\TokenInfoSuccessResponse**](../Model/TokenInfoSuccessResponse.md)
 
 ### Authorization
 

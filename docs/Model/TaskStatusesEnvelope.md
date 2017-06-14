@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | **int** | Total | [optional] 
-**data** | [**\ArtikCloud\Model\TaskStatuses**](TaskStatuses.md) | Task statuses | [optional] 
+**data** | [**\ArtikCloud\ArtikCloud\Model\TaskStatuses**](TaskStatuses.md) | Task statuses | [optional] 
 **offset** | **int** | Offset | [optional] 
 **count** | **int** | Count | [optional] 
 

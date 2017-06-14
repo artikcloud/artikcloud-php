@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 
 # **createTasks**
-> \ArtikCloud\Model\TaskEnvelope createTasks($task_payload)
+> \ArtikCloud\ArtikCloud\Model\TaskEnvelope createTasks($task_payload)
 
 Create a new task for one or more devices
 
@@ -37,7 +37,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new ArtikCloud\Api\DevicesManagementApi();
-$task_payload = new \ArtikCloud\Model\TaskRequest(); // \ArtikCloud\Model\TaskRequest | Task object to be created
+$task_payload = new \ArtikCloud\ArtikCloud\Model\TaskRequest(); // \ArtikCloud\ArtikCloud\Model\TaskRequest | Task object to be created
 
 try {
     $result = $api_instance->createTasks($task_payload);
@@ -52,11 +52,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **task_payload** | [**\ArtikCloud\Model\TaskRequest**](../Model/\ArtikCloud\Model\TaskRequest.md)| Task object to be created |
+ **task_payload** | [**\ArtikCloud\ArtikCloud\Model\TaskRequest**](../Model/\ArtikCloud\ArtikCloud\Model\TaskRequest.md)| Task object to be created |
 
 ### Return type
 
-[**\ArtikCloud\Model\TaskEnvelope**](../Model/TaskEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\TaskEnvelope**](../Model/TaskEnvelope.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteServerProperties**
-> \ArtikCloud\Model\MetadataEnvelope deleteServerProperties($did)
+> \ArtikCloud\ArtikCloud\Model\MetadataEnvelope deleteServerProperties($did)
 
 Deletes a device's properties.
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\MetadataEnvelope**](../Model/MetadataEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\MetadataEnvelope**](../Model/MetadataEnvelope.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getAllByDid**
-> \ArtikCloud\Model\TaskByDidListEnvelope getAllByDid($did, $count, $offset, $status, $order, $sort)
+> \ArtikCloud\ArtikCloud\Model\TaskByDidListEnvelope getAllByDid($did, $count, $offset, $status, $order, $sort)
 
 Returns the list of tasks for a particular device id with optional status filter.
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\TaskByDidListEnvelope**](../Model/TaskByDidListEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\TaskByDidListEnvelope**](../Model/TaskByDidListEnvelope.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDeviceTypesInfo**
-> \ArtikCloud\Model\DeviceTypesInfoEnvelope getDeviceTypesInfo($dtid)
+> \ArtikCloud\ArtikCloud\Model\DeviceTypesInfoEnvelope getDeviceTypesInfo($dtid)
 
 Read a device type device management information.
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTypesInfoEnvelope**](../Model/DeviceTypesInfoEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTypesInfoEnvelope**](../Model/DeviceTypesInfoEnvelope.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getManifestProperties**
-> \ArtikCloud\Model\MetadataPropertiesEnvelope getManifestProperties($dtid)
+> \ArtikCloud\ArtikCloud\Model\MetadataPropertiesEnvelope getManifestProperties($dtid)
 
 Get a device type's device management manifest properties
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\MetadataPropertiesEnvelope**](../Model/MetadataPropertiesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\MetadataPropertiesEnvelope**](../Model/MetadataPropertiesEnvelope.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getProperties**
-> \ArtikCloud\Model\MetadataEnvelope getProperties($did, $include_timestamp)
+> \ArtikCloud\ArtikCloud\Model\MetadataEnvelope getProperties($did, $include_timestamp)
 
 Read a device's properties.
 
@@ -308,7 +308,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\MetadataEnvelope**](../Model/MetadataEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\MetadataEnvelope**](../Model/MetadataEnvelope.md)
 
 ### Authorization
 
@@ -322,7 +322,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getStatuses**
-> \ArtikCloud\Model\TaskStatusesEnvelope getStatuses($tid, $count, $offset, $status, $dids)
+> \ArtikCloud\ArtikCloud\Model\TaskStatusesEnvelope getStatuses($tid, $count, $offset, $status, $dids)
 
 Returns the details and status of a task id and the individual statuses of each device id in the list.
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\TaskStatusesEnvelope**](../Model/TaskStatusesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\TaskStatusesEnvelope**](../Model/TaskStatusesEnvelope.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getStatusesHistory**
-> \ArtikCloud\Model\TaskStatusesHistoryEnvelope getStatusesHistory($tid, $did)
+> \ArtikCloud\ArtikCloud\Model\TaskStatusesHistoryEnvelope getStatusesHistory($tid, $did)
 
 Returns the history of the status changes for a specific task id, or for a specific device id in that task.
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\TaskStatusesHistoryEnvelope**](../Model/TaskStatusesHistoryEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\TaskStatusesHistoryEnvelope**](../Model/TaskStatusesHistoryEnvelope.md)
 
 ### Authorization
 
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTaskByID**
-> \ArtikCloud\Model\TaskEnvelope getTaskByID($tid)
+> \ArtikCloud\ArtikCloud\Model\TaskEnvelope getTaskByID($tid)
 
 Returns the details and global status of a specific task id.
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\TaskEnvelope**](../Model/TaskEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\TaskEnvelope**](../Model/TaskEnvelope.md)
 
 ### Authorization
 
@@ -476,7 +476,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTasks**
-> \ArtikCloud\Model\TaskListEnvelope getTasks($dtid, $count, $offset, $status, $order, $sort)
+> \ArtikCloud\ArtikCloud\Model\TaskListEnvelope getTasks($dtid, $count, $offset, $status, $order, $sort)
 
 Returns the all the tasks for a device type.
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\TaskListEnvelope**](../Model/TaskListEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\TaskListEnvelope**](../Model/TaskListEnvelope.md)
 
 ### Authorization
 
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **queryProperties**
-> \ArtikCloud\Model\MetadataQueryEnvelope queryProperties($dtid, $count, $offset, $filter, $include_timestamp)
+> \ArtikCloud\ArtikCloud\Model\MetadataQueryEnvelope queryProperties($dtid, $count, $offset, $filter, $include_timestamp)
 
 Query device properties across devices.
 
@@ -576,7 +576,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\MetadataQueryEnvelope**](../Model/MetadataQueryEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\MetadataQueryEnvelope**](../Model/MetadataQueryEnvelope.md)
 
 ### Authorization
 
@@ -590,7 +590,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDeviceTypesInfo**
-> \ArtikCloud\Model\DeviceTypesInfoEnvelope updateDeviceTypesInfo($dtid, $device_type_info)
+> \ArtikCloud\ArtikCloud\Model\DeviceTypesInfoEnvelope updateDeviceTypesInfo($dtid, $device_type_info)
 
 Updates a device type information
 
@@ -606,7 +606,7 @@ ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS
 
 $api_instance = new ArtikCloud\Api\DevicesManagementApi();
 $dtid = "dtid_example"; // string | Device type ID.
-$device_type_info = new \ArtikCloud\Model\DeviceTypesInfo(); // \ArtikCloud\Model\DeviceTypesInfo | Device type info object to be set
+$device_type_info = new \ArtikCloud\ArtikCloud\Model\DeviceTypesInfo(); // \ArtikCloud\ArtikCloud\Model\DeviceTypesInfo | Device type info object to be set
 
 try {
     $result = $api_instance->updateDeviceTypesInfo($dtid, $device_type_info);
@@ -622,11 +622,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **dtid** | **string**| Device type ID. |
- **device_type_info** | [**\ArtikCloud\Model\DeviceTypesInfo**](../Model/\ArtikCloud\Model\DeviceTypesInfo.md)| Device type info object to be set |
+ **device_type_info** | [**\ArtikCloud\ArtikCloud\Model\DeviceTypesInfo**](../Model/\ArtikCloud\ArtikCloud\Model\DeviceTypesInfo.md)| Device type info object to be set |
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTypesInfoEnvelope**](../Model/DeviceTypesInfoEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTypesInfoEnvelope**](../Model/DeviceTypesInfoEnvelope.md)
 
 ### Authorization
 
@@ -640,7 +640,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateServerProperties**
-> \ArtikCloud\Model\MetadataEnvelope updateServerProperties($did, $device_properties)
+> \ArtikCloud\ArtikCloud\Model\MetadataEnvelope updateServerProperties($did, $device_properties)
 
 Updates a device's server properties.
 
@@ -676,7 +676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\MetadataEnvelope**](../Model/MetadataEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\MetadataEnvelope**](../Model/MetadataEnvelope.md)
 
 ### Authorization
 
@@ -690,7 +690,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateTask**
-> \ArtikCloud\Model\TaskUpdateResponse updateTask($tid, $task_update_request)
+> \ArtikCloud\ArtikCloud\Model\TaskUpdateResponse updateTask($tid, $task_update_request)
 
 Updates a task for all devices - For now just allows changing the state to cancelled.
 
@@ -706,7 +706,7 @@ ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS
 
 $api_instance = new ArtikCloud\Api\DevicesManagementApi();
 $tid = "tid_example"; // string | Task ID.
-$task_update_request = new \ArtikCloud\Model\TaskUpdateRequest(); // \ArtikCloud\Model\TaskUpdateRequest | Task update request
+$task_update_request = new \ArtikCloud\ArtikCloud\Model\TaskUpdateRequest(); // \ArtikCloud\ArtikCloud\Model\TaskUpdateRequest | Task update request
 
 try {
     $result = $api_instance->updateTask($tid, $task_update_request);
@@ -722,11 +722,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tid** | **string**| Task ID. |
- **task_update_request** | [**\ArtikCloud\Model\TaskUpdateRequest**](../Model/\ArtikCloud\Model\TaskUpdateRequest.md)| Task update request |
+ **task_update_request** | [**\ArtikCloud\ArtikCloud\Model\TaskUpdateRequest**](../Model/\ArtikCloud\ArtikCloud\Model\TaskUpdateRequest.md)| Task update request |
 
 ### Return type
 
-[**\ArtikCloud\Model\TaskUpdateResponse**](../Model/TaskUpdateResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\TaskUpdateResponse**](../Model/TaskUpdateResponse.md)
 
 ### Authorization
 
@@ -740,7 +740,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateTaskForDevice**
-> \ArtikCloud\Model\DeviceTaskUpdateResponse updateTaskForDevice($tid, $did, $device_task_update_request)
+> \ArtikCloud\ArtikCloud\Model\DeviceTaskUpdateResponse updateTaskForDevice($tid, $did, $device_task_update_request)
 
 Updates a task for a specific device - For now just allows changing the state to cancelled.
 
@@ -757,7 +757,7 @@ ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS
 $api_instance = new ArtikCloud\Api\DevicesManagementApi();
 $tid = "tid_example"; // string | Task ID.
 $did = "did_example"; // string | Device ID.
-$device_task_update_request = new \ArtikCloud\Model\DeviceTaskUpdateRequest(); // \ArtikCloud\Model\DeviceTaskUpdateRequest | Device task update request
+$device_task_update_request = new \ArtikCloud\ArtikCloud\Model\DeviceTaskUpdateRequest(); // \ArtikCloud\ArtikCloud\Model\DeviceTaskUpdateRequest | Device task update request
 
 try {
     $result = $api_instance->updateTaskForDevice($tid, $did, $device_task_update_request);
@@ -774,11 +774,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tid** | **string**| Task ID. |
  **did** | **string**| Device ID. |
- **device_task_update_request** | [**\ArtikCloud\Model\DeviceTaskUpdateRequest**](../Model/\ArtikCloud\Model\DeviceTaskUpdateRequest.md)| Device task update request |
+ **device_task_update_request** | [**\ArtikCloud\ArtikCloud\Model\DeviceTaskUpdateRequest**](../Model/\ArtikCloud\ArtikCloud\Model\DeviceTaskUpdateRequest.md)| Device task update request |
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTaskUpdateResponse**](../Model/DeviceTaskUpdateResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTaskUpdateResponse**](../Model/DeviceTaskUpdateResponse.md)
 
 ### Authorization
 

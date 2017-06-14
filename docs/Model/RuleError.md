@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **error_code** | **int** |  | [optional] 
-**field_path** | [**\ArtikCloud\Model\FieldPath**](FieldPath.md) |  | [optional] 
+**field_path** | [**\ArtikCloud\ArtikCloud\Model\FieldPath**](FieldPath.md) |  | [optional] 
 **message_args** | **string[]** |  | [optional] 
 **message_key** | **string** |  | [optional] 
 

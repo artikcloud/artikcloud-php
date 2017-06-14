@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **exportRequest**
-> \ArtikCloud\Model\ExportRequestResponse exportRequest($export_request_info)
+> \ArtikCloud\ArtikCloud\Model\ExportRequestResponse exportRequest($export_request_info)
 
 Create Export Request
 
@@ -26,7 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new ArtikCloud\Api\ExportApi();
-$export_request_info = new \ArtikCloud\Model\ExportRequestInfo(); // \ArtikCloud\Model\ExportRequestInfo | ExportRequest object that is passed in the body
+$export_request_info = new \ArtikCloud\ArtikCloud\Model\ExportRequestInfo(); // \ArtikCloud\ArtikCloud\Model\ExportRequestInfo | ExportRequest object that is passed in the body
 
 try {
     $result = $api_instance->exportRequest($export_request_info);
@@ -41,11 +41,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **export_request_info** | [**\ArtikCloud\Model\ExportRequestInfo**](../Model/\ArtikCloud\Model\ExportRequestInfo.md)| ExportRequest object that is passed in the body |
+ **export_request_info** | [**\ArtikCloud\ArtikCloud\Model\ExportRequestInfo**](../Model/\ArtikCloud\ArtikCloud\Model\ExportRequestInfo.md)| ExportRequest object that is passed in the body |
 
 ### Return type
 
-[**\ArtikCloud\Model\ExportRequestResponse**](../Model/ExportRequestResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\ExportRequestResponse**](../Model/ExportRequestResponse.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getExportHistory**
-> \ArtikCloud\Model\ExportHistoryResponse getExportHistory($trial_id, $count, $offset)
+> \ArtikCloud\ArtikCloud\Model\ExportHistoryResponse getExportHistory($trial_id, $count, $offset)
 
 Get Export History
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\ExportHistoryResponse**](../Model/ExportHistoryResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\ExportHistoryResponse**](../Model/ExportHistoryResponse.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getExportStatus**
-> \ArtikCloud\Model\ExportStatusResponse getExportStatus($export_id)
+> \ArtikCloud\ArtikCloud\Model\ExportStatusResponse getExportStatus($export_id)
 
 Check Export Status
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\ExportStatusResponse**](../Model/ExportStatusResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\ExportStatusResponse**](../Model/ExportStatusResponse.md)
 
 ### Authorization
 

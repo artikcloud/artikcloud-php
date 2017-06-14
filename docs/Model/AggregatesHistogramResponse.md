@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\ArtikCloud\Model\AggregatesHistogramData[]**](AggregatesHistogramData.md) |  | [optional] 
+**data** | [**\ArtikCloud\ArtikCloud\Model\AggregatesHistogramData[]**](AggregatesHistogramData.md) |  | [optional] 
 **end_date** | **int** |  | [optional] 
 **field** | **string** |  | [optional] 
 **interval** | **string** |  | [optional] 

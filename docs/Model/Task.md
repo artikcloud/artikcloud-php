@@ -7,11 +7,11 @@ Name | Type | Description | Notes
 **task_type** | **string** | Task type | [optional] 
 **modified_on** | **int** | Modified on | [optional] 
 **dtid** | **string** | Device Type ID | [optional] 
-**status_counts** | [**\ArtikCloud\Model\TaskStatusCounts**](TaskStatusCounts.md) | Status counts | [optional] 
+**status_counts** | [**\ArtikCloud\ArtikCloud\Model\TaskStatusCounts**](TaskStatusCounts.md) | Status counts | [optional] 
 **property** | **string** | Property | [optional] 
 **id** | **string** | Task ID | [optional] 
 **dids** | **string[]** | Device IDs | [optional] 
-**task_parameters** | [**\ArtikCloud\Model\TaskParameters**](TaskParameters.md) | Task parameters | [optional] 
+**task_parameters** | [**\ArtikCloud\ArtikCloud\Model\TaskParameters**](TaskParameters.md) | Task parameters | [optional] 
 **created_on** | **int** | Created on | [optional] 
 **status** | **string** | Status | [optional] 
 

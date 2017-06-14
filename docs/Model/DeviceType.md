@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **protected** | **bool** | Protected status. | [optional] 
 **in_store** | **bool** | In Store. | [optional] 
 **owned_by_current_user** | **bool** | Does the current user own a device of this device type | [optional] 
-**tags** | [**\ArtikCloud\Model\Tag[]**](Tag.md) | Tags | [optional] 
+**tags** | [**\ArtikCloud\ArtikCloud\Model\Tag[]**](Tag.md) | Tags | [optional] 
 **rsp** | **bool** | Require Secure Device Registration (SDR) Protocol. | [optional] 
 **issuer_dn** | **string** | Issuer Distinguished Name (Used in SDR) | [optional] 
 **vid** | **string** | Vendor ID. (Used in SDR) | [optional] 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **next** | **string** |  | [optional] 
 **count** | **int** |  | 
 **size** | **int** |  | 
-**data** | [**\ArtikCloud\Model\NormalizedAction[]**](NormalizedAction.md) |  | 
+**data** | [**\ArtikCloud\ArtikCloud\Model\NormalizedAction[]**](NormalizedAction.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

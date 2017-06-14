@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | **int** | Total number of tasks in list | [optional] 
-**data** | [**\ArtikCloud\Model\TaskByDidList**](TaskByDidList.md) | Device task list envelope | [optional] 
+**data** | [**\ArtikCloud\ArtikCloud\Model\TaskByDidList**](TaskByDidList.md) | Device task list envelope | [optional] 
 **offset** | **int** | Offset if using pagination | [optional] 
 **count** | **int** | Count for current result set | [optional] 
 

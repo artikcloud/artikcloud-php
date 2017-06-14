@@ -11,11 +11,12 @@ Method | HTTP request | Description
 [**getUserDevices**](UsersApi.md#getUserDevices) | **GET** /users/{userId}/devices | Get User Devices
 [**getUserProperties**](UsersApi.md#getUserProperties) | **GET** /users/{userId}/properties | Get User application properties
 [**getUserRules**](UsersApi.md#getUserRules) | **GET** /users/{userId}/rules | Get User Rules
+[**listAllSharesForUser**](UsersApi.md#listAllSharesForUser) | **GET** in/api/users/{userId}/shares | Get User shares
 [**updateUserProperties**](UsersApi.md#updateUserProperties) | **PUT** /users/{userId}/properties | Update User Application Properties
 
 
 # **createUserProperties**
-> \ArtikCloud\Model\PropertiesEnvelope createUserProperties($user_id, $properties, $aid)
+> \ArtikCloud\ArtikCloud\Model\PropertiesEnvelope createUserProperties($user_id, $properties, $aid)
 
 Create User Application Properties
 
@@ -31,7 +32,7 @@ ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS
 
 $api_instance = new ArtikCloud\Api\UsersApi();
 $user_id = "user_id_example"; // string | User Id
-$properties = new \ArtikCloud\Model\AppProperties(); // \ArtikCloud\Model\AppProperties | Properties to be updated
+$properties = new \ArtikCloud\ArtikCloud\Model\AppProperties(); // \ArtikCloud\ArtikCloud\Model\AppProperties | Properties to be updated
 $aid = "aid_example"; // string | Application ID
 
 try {
@@ -48,12 +49,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **string**| User Id |
- **properties** | [**\ArtikCloud\Model\AppProperties**](../Model/\ArtikCloud\Model\AppProperties.md)| Properties to be updated |
+ **properties** | [**\ArtikCloud\ArtikCloud\Model\AppProperties**](../Model/\ArtikCloud\ArtikCloud\Model\AppProperties.md)| Properties to be updated |
  **aid** | **string**| Application ID | [optional]
 
 ### Return type
 
-[**\ArtikCloud\Model\PropertiesEnvelope**](../Model/PropertiesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\PropertiesEnvelope**](../Model/PropertiesEnvelope.md)
 
 ### Authorization
 
@@ -67,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteUserProperties**
-> \ArtikCloud\Model\PropertiesEnvelope deleteUserProperties($user_id, $aid)
+> \ArtikCloud\ArtikCloud\Model\PropertiesEnvelope deleteUserProperties($user_id, $aid)
 
 Delete User Application Properties
 
@@ -103,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\PropertiesEnvelope**](../Model/PropertiesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\PropertiesEnvelope**](../Model/PropertiesEnvelope.md)
 
 ### Authorization
 
@@ -117,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSelf**
-> \ArtikCloud\Model\UserEnvelope getSelf()
+> \ArtikCloud\ArtikCloud\Model\UserEnvelope getSelf()
 
 Get Current User Profile
 
@@ -147,7 +148,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\ArtikCloud\Model\UserEnvelope**](../Model/UserEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\UserEnvelope**](../Model/UserEnvelope.md)
 
 ### Authorization
 
@@ -161,7 +162,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserDeviceTypes**
-> \ArtikCloud\Model\DeviceTypesEnvelope getUserDeviceTypes($user_id, $offset, $count, $include_shared)
+> \ArtikCloud\ArtikCloud\Model\DeviceTypesEnvelope getUserDeviceTypes($user_id, $offset, $count, $include_shared)
 
 Get User Device Types
 
@@ -201,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTypesEnvelope**](../Model/DeviceTypesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTypesEnvelope**](../Model/DeviceTypesEnvelope.md)
 
 ### Authorization
 
@@ -215,7 +216,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserDevices**
-> \ArtikCloud\Model\DevicesEnvelope getUserDevices($user_id, $offset, $count, $include_properties)
+> \ArtikCloud\ArtikCloud\Model\DevicesEnvelope getUserDevices($user_id, $offset, $count, $include_properties, $owner, $include_share_info)
 
 Get User Devices
 
@@ -234,9 +235,11 @@ $user_id = "user_id_example"; // string | User ID
 $offset = 56; // int | Offset for pagination.
 $count = 56; // int | Desired count of items in the result set
 $include_properties = true; // bool | Optional. Boolean (true/false) - If false, only return the user's device types. If true, also return device types shared by other users.
+$owner = "owner_example"; // string | Return owned and/or shared devices. Default to ALL.
+$include_share_info = true; // bool | Include share info
 
 try {
-    $result = $api_instance->getUserDevices($user_id, $offset, $count, $include_properties);
+    $result = $api_instance->getUserDevices($user_id, $offset, $count, $include_properties, $owner, $include_share_info);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUserDevices: ', $e->getMessage(), PHP_EOL;
@@ -252,10 +255,12 @@ Name | Type | Description  | Notes
  **offset** | **int**| Offset for pagination. | [optional]
  **count** | **int**| Desired count of items in the result set | [optional]
  **include_properties** | **bool**| Optional. Boolean (true/false) - If false, only return the user&#39;s device types. If true, also return device types shared by other users. | [optional]
+ **owner** | **string**| Return owned and/or shared devices. Default to ALL. | [optional]
+ **include_share_info** | **bool**| Include share info | [optional]
 
 ### Return type
 
-[**\ArtikCloud\Model\DevicesEnvelope**](../Model/DevicesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DevicesEnvelope**](../Model/DevicesEnvelope.md)
 
 ### Authorization
 
@@ -269,7 +274,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserProperties**
-> \ArtikCloud\Model\PropertiesEnvelope getUserProperties($user_id, $aid)
+> \ArtikCloud\ArtikCloud\Model\PropertiesEnvelope getUserProperties($user_id, $aid)
 
 Get User application properties
 
@@ -305,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\PropertiesEnvelope**](../Model/PropertiesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\PropertiesEnvelope**](../Model/PropertiesEnvelope.md)
 
 ### Authorization
 
@@ -319,7 +324,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserRules**
-> \ArtikCloud\Model\RulesEnvelope getUserRules($user_id, $exclude_disabled, $count, $offset)
+> \ArtikCloud\ArtikCloud\Model\RulesEnvelope getUserRules($user_id, $exclude_disabled, $count, $offset)
 
 Get User Rules
 
@@ -359,7 +364,61 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\RulesEnvelope**](../Model/RulesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\RulesEnvelope**](../Model/RulesEnvelope.md)
+
+### Authorization
+
+[artikcloud_oauth](../../README.md#artikcloud_oauth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **listAllSharesForUser**
+> \ArtikCloud\ArtikCloud\Model\DeviceSharingEnvelope listAllSharesForUser($user_id, $filter, $count, $offset)
+
+Get User shares
+
+Get User shares
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure OAuth2 access token for authorization: artikcloud_oauth
+ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+$api_instance = new ArtikCloud\Api\UsersApi();
+$user_id = "user_id_example"; // string | User ID.
+$filter = "filter_example"; // string | filter
+$count = 56; // int | Desired count of items in the result set.
+$offset = 56; // int | Offset for pagination.
+
+try {
+    $result = $api_instance->listAllSharesForUser($user_id, $filter, $count, $offset);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->listAllSharesForUser: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **string**| User ID. |
+ **filter** | **string**| filter |
+ **count** | **int**| Desired count of items in the result set. | [optional]
+ **offset** | **int**| Offset for pagination. | [optional]
+
+### Return type
+
+[**\ArtikCloud\ArtikCloud\Model\DeviceSharingEnvelope**](../Model/DeviceSharingEnvelope.md)
 
 ### Authorization
 
@@ -373,7 +432,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateUserProperties**
-> \ArtikCloud\Model\PropertiesEnvelope updateUserProperties($user_id, $properties, $aid)
+> \ArtikCloud\ArtikCloud\Model\PropertiesEnvelope updateUserProperties($user_id, $properties, $aid)
 
 Update User Application Properties
 
@@ -389,7 +448,7 @@ ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS
 
 $api_instance = new ArtikCloud\Api\UsersApi();
 $user_id = "user_id_example"; // string | User Id
-$properties = new \ArtikCloud\Model\AppProperties(); // \ArtikCloud\Model\AppProperties | Properties to be updated
+$properties = new \ArtikCloud\ArtikCloud\Model\AppProperties(); // \ArtikCloud\ArtikCloud\Model\AppProperties | Properties to be updated
 $aid = "aid_example"; // string | Application ID
 
 try {
@@ -406,12 +465,12 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **string**| User Id |
- **properties** | [**\ArtikCloud\Model\AppProperties**](../Model/\ArtikCloud\Model\AppProperties.md)| Properties to be updated |
+ **properties** | [**\ArtikCloud\ArtikCloud\Model\AppProperties**](../Model/\ArtikCloud\ArtikCloud\Model\AppProperties.md)| Properties to be updated |
  **aid** | **string**| Application ID | [optional]
 
 ### Return type
 
-[**\ArtikCloud\Model\PropertiesEnvelope**](../Model/PropertiesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\PropertiesEnvelope**](../Model/PropertiesEnvelope.md)
 
 ### Authorization
 

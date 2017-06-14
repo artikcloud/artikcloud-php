@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\ArtikCloud\Model\ActionDetailsArray**](ActionDetailsArray.md) |  | [optional] 
+**data** | [**\ArtikCloud\ArtikCloud\Model\ActionDetailsArray**](ActionDetailsArray.md) |  | [optional] 
 **cid** | **string** | Confirmation ID. | [optional] 
 **ddid** | **string** | Destination Device ID. | [optional] 
 **sdid** | **string** | Source Device ID. | [optional] 

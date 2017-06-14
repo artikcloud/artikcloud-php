@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **addDevice**
-> \ArtikCloud\Model\DeviceEnvelope addDevice($device)
+> \ArtikCloud\ArtikCloud\Model\DeviceEnvelope addDevice($device)
 
 Add Device
 
@@ -30,7 +30,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new ArtikCloud\Api\DevicesApi();
-$device = new \ArtikCloud\Model\Device(); // \ArtikCloud\Model\Device | Device to be added to the user
+$device = new \ArtikCloud\ArtikCloud\Model\Device(); // \ArtikCloud\ArtikCloud\Model\Device | Device to be added to the user
 
 try {
     $result = $api_instance->addDevice($device);
@@ -45,11 +45,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device** | [**\ArtikCloud\Model\Device**](../Model/\ArtikCloud\Model\Device.md)| Device to be added to the user |
+ **device** | [**\ArtikCloud\ArtikCloud\Model\Device**](../Model/\ArtikCloud\ArtikCloud\Model\Device.md)| Device to be added to the user |
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceEnvelope**](../Model/DeviceEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceEnvelope**](../Model/DeviceEnvelope.md)
 
 ### Authorization
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDevice**
-> \ArtikCloud\Model\DeviceEnvelope deleteDevice($device_id)
+> \ArtikCloud\ArtikCloud\Model\DeviceEnvelope deleteDevice($device_id)
 
 Delete Device
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceEnvelope**](../Model/DeviceEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceEnvelope**](../Model/DeviceEnvelope.md)
 
 ### Authorization
 
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteDeviceToken**
-> \ArtikCloud\Model\DeviceTokenEnvelope deleteDeviceToken($device_id)
+> \ArtikCloud\ArtikCloud\Model\DeviceTokenEnvelope deleteDeviceToken($device_id)
 
 Delete Device Token
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTokenEnvelope**](../Model/DeviceTokenEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTokenEnvelope**](../Model/DeviceTokenEnvelope.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDevice**
-> \ArtikCloud\Model\DeviceEnvelope getDevice($device_id)
+> \ArtikCloud\ArtikCloud\Model\DeviceEnvelope getDevice($device_id)
 
 Get Device
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceEnvelope**](../Model/DeviceEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceEnvelope**](../Model/DeviceEnvelope.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDevicePresence**
-> \ArtikCloud\Model\PresenceEnvelope getDevicePresence($device_id)
+> \ArtikCloud\ArtikCloud\Model\PresenceEnvelope getDevicePresence($device_id)
 
 Get device presence information
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\PresenceEnvelope**](../Model/PresenceEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\PresenceEnvelope**](../Model/PresenceEnvelope.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getDeviceToken**
-> \ArtikCloud\Model\DeviceTokenEnvelope getDeviceToken($device_id)
+> \ArtikCloud\ArtikCloud\Model\DeviceTokenEnvelope getDeviceToken($device_id)
 
 Get Device Token
 
@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTokenEnvelope**](../Model/DeviceTokenEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTokenEnvelope**](../Model/DeviceTokenEnvelope.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDevice**
-> \ArtikCloud\Model\DeviceEnvelope updateDevice($device_id, $device)
+> \ArtikCloud\ArtikCloud\Model\DeviceEnvelope updateDevice($device_id, $device)
 
 Update Device
 
@@ -319,7 +319,7 @@ ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS
 
 $api_instance = new ArtikCloud\Api\DevicesApi();
 $device_id = "device_id_example"; // string | deviceId
-$device = new \ArtikCloud\Model\Device(); // \ArtikCloud\Model\Device | Device to be updated
+$device = new \ArtikCloud\ArtikCloud\Model\Device(); // \ArtikCloud\ArtikCloud\Model\Device | Device to be updated
 
 try {
     $result = $api_instance->updateDevice($device_id, $device);
@@ -335,11 +335,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **device_id** | **string**| deviceId |
- **device** | [**\ArtikCloud\Model\Device**](../Model/\ArtikCloud\Model\Device.md)| Device to be updated |
+ **device** | [**\ArtikCloud\ArtikCloud\Model\Device**](../Model/\ArtikCloud\ArtikCloud\Model\Device.md)| Device to be updated |
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceEnvelope**](../Model/DeviceEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceEnvelope**](../Model/DeviceEnvelope.md)
 
 ### Authorization
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateDeviceToken**
-> \ArtikCloud\Model\DeviceTokenEnvelope updateDeviceToken($device_id)
+> \ArtikCloud\ArtikCloud\Model\DeviceTokenEnvelope updateDeviceToken($device_id)
 
 Update Device Token
 
@@ -387,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceTokenEnvelope**](../Model/DeviceTokenEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceTokenEnvelope**](../Model/DeviceTokenEnvelope.md)
 
 ### Authorization
 

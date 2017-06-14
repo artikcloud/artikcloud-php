@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **getTagCategories**
-> \ArtikCloud\Model\TagsEnvelope getTagCategories()
+> \ArtikCloud\ArtikCloud\Model\TagsEnvelope getTagCategories()
 
 Get all categories
 
@@ -40,7 +40,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\ArtikCloud\Model\TagsEnvelope**](../Model/TagsEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\TagsEnvelope**](../Model/TagsEnvelope.md)
 
 ### Authorization
 
@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTagSuggestions**
-> \ArtikCloud\Model\TagsEnvelope getTagSuggestions($entity_type, $tags, $name, $count)
+> \ArtikCloud\ArtikCloud\Model\TagsEnvelope getTagSuggestions($entity_type, $tags, $name, $count)
 
 Get tag suggestions
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\TagsEnvelope**](../Model/TagsEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\TagsEnvelope**](../Model/TagsEnvelope.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTagsByCategories**
-> \ArtikCloud\Model\TagsEnvelope getTagsByCategories($categories)
+> \ArtikCloud\ArtikCloud\Model\TagsEnvelope getTagsByCategories($categories)
 
 Get all tags of categories
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\TagsEnvelope**](../Model/TagsEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\TagsEnvelope**](../Model/TagsEnvelope.md)
 
 ### Authorization
 

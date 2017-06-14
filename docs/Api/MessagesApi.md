@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **getAggregatesHistogram**
-> \ArtikCloud\Model\AggregatesHistogramResponse getAggregatesHistogram($start_date, $end_date, $sdid, $field, $interval)
+> \ArtikCloud\ArtikCloud\Model\AggregatesHistogramResponse getAggregatesHistogram($start_date, $end_date, $sdid, $field, $interval)
 
 Get Normalized Message Histogram
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\AggregatesHistogramResponse**](../Model/AggregatesHistogramResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\AggregatesHistogramResponse**](../Model/AggregatesHistogramResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getFieldPresence**
-> \ArtikCloud\Model\FieldPresenceEnvelope getFieldPresence($start_date, $end_date, $interval, $sdid, $field_presence)
+> \ArtikCloud\ArtikCloud\Model\FieldPresenceEnvelope getFieldPresence($start_date, $end_date, $interval, $sdid, $field_presence)
 
 Get normalized message presence
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\FieldPresenceEnvelope**](../Model/FieldPresenceEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\FieldPresenceEnvelope**](../Model/FieldPresenceEnvelope.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getLastNormalizedMessages**
-> \ArtikCloud\Model\NormalizedMessagesEnvelope getLastNormalizedMessages($count, $sdids, $field_presence)
+> \ArtikCloud\ArtikCloud\Model\NormalizedMessagesEnvelope getLastNormalizedMessages($count, $sdids, $field_presence)
 
 Get Last Normalized Message
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\NormalizedMessagesEnvelope**](../Model/NormalizedMessagesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\NormalizedMessagesEnvelope**](../Model/NormalizedMessagesEnvelope.md)
 
 ### Authorization
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMessageAggregates**
-> \ArtikCloud\Model\AggregatesResponse getMessageAggregates($sdid, $field, $start_date, $end_date)
+> \ArtikCloud\ArtikCloud\Model\AggregatesResponse getMessageAggregates($sdid, $field, $start_date, $end_date)
 
 Get Normalized Message Aggregates
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\AggregatesResponse**](../Model/AggregatesResponse.md)
+[**\ArtikCloud\ArtikCloud\Model\AggregatesResponse**](../Model/AggregatesResponse.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getMessageSnapshots**
-> \ArtikCloud\Model\SnapshotResponses getMessageSnapshots($sdids, $include_timestamp)
+> \ArtikCloud\ArtikCloud\Model\SnapshotResponses getMessageSnapshots($sdids, $include_timestamp)
 
 Get Message Snapshots
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\SnapshotResponses**](../Model/SnapshotResponses.md)
+[**\ArtikCloud\ArtikCloud\Model\SnapshotResponses**](../Model/SnapshotResponses.md)
 
 ### Authorization
 
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNormalizedActions**
-> \ArtikCloud\Model\NormalizedActionsEnvelope getNormalizedActions($uid, $ddid, $mid, $offset, $count, $start_date, $end_date, $order)
+> \ArtikCloud\ArtikCloud\Model\NormalizedActionsEnvelope getNormalizedActions($uid, $ddid, $mid, $offset, $count, $start_date, $end_date, $order)
 
 Get Normalized Actions
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\NormalizedActionsEnvelope**](../Model/NormalizedActionsEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\NormalizedActionsEnvelope**](../Model/NormalizedActionsEnvelope.md)
 
 ### Authorization
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getNormalizedMessages**
-> \ArtikCloud\Model\NormalizedMessagesEnvelope getNormalizedMessages($uid, $sdid, $mid, $field_presence, $filter, $offset, $count, $start_date, $end_date, $order)
+> \ArtikCloud\ArtikCloud\Model\NormalizedMessagesEnvelope getNormalizedMessages($uid, $sdid, $mid, $field_presence, $filter, $offset, $count, $start_date, $end_date, $order)
 
 Get Normalized Messages
 
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\NormalizedMessagesEnvelope**](../Model/NormalizedMessagesEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\NormalizedMessagesEnvelope**](../Model/NormalizedMessagesEnvelope.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendActions**
-> \ArtikCloud\Model\MessageIDEnvelope sendActions($data)
+> \ArtikCloud\ArtikCloud\Model\MessageIDEnvelope sendActions($data)
 
 Send Actions
 
@@ -427,7 +427,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new ArtikCloud\Api\MessagesApi();
-$data = new \ArtikCloud\Model\Actions(); // \ArtikCloud\Model\Actions | Actions that are passed in the body
+$data = new \ArtikCloud\ArtikCloud\Model\Actions(); // \ArtikCloud\ArtikCloud\Model\Actions | Actions that are passed in the body
 
 try {
     $result = $api_instance->sendActions($data);
@@ -442,11 +442,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\ArtikCloud\Model\Actions**](../Model/\ArtikCloud\Model\Actions.md)| Actions that are passed in the body |
+ **data** | [**\ArtikCloud\ArtikCloud\Model\Actions**](../Model/\ArtikCloud\ArtikCloud\Model\Actions.md)| Actions that are passed in the body |
 
 ### Return type
 
-[**\ArtikCloud\Model\MessageIDEnvelope**](../Model/MessageIDEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\MessageIDEnvelope**](../Model/MessageIDEnvelope.md)
 
 ### Authorization
 
@@ -460,7 +460,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **sendMessage**
-> \ArtikCloud\Model\MessageIDEnvelope sendMessage($data)
+> \ArtikCloud\ArtikCloud\Model\MessageIDEnvelope sendMessage($data)
 
 Send Message
 
@@ -475,7 +475,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new ArtikCloud\Api\MessagesApi();
-$data = new \ArtikCloud\Model\Message(); // \ArtikCloud\Model\Message | Message object that is passed in the body
+$data = new \ArtikCloud\ArtikCloud\Model\Message(); // \ArtikCloud\ArtikCloud\Model\Message | Message object that is passed in the body
 
 try {
     $result = $api_instance->sendMessage($data);
@@ -490,11 +490,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**\ArtikCloud\Model\Message**](../Model/\ArtikCloud\Model\Message.md)| Message object that is passed in the body |
+ **data** | [**\ArtikCloud\ArtikCloud\Model\Message**](../Model/\ArtikCloud\ArtikCloud\Model\Message.md)| Message object that is passed in the body |
 
 ### Return type
 
-[**\ArtikCloud\Model\MessageIDEnvelope**](../Model/MessageIDEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\MessageIDEnvelope**](../Model/MessageIDEnvelope.md)
 
 ### Authorization
 

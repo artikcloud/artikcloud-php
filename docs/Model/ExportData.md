@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **export_id** | **string** |  | [optional] 
 **file_size** | **int** |  | [optional] 
 **md5** | **string** |  | [optional] 
-**request** | [**\ArtikCloud\Model\ExportRequest**](ExportRequest.md) |  | [optional] 
+**request** | [**\ArtikCloud\ArtikCloud\Model\ExportRequest**](ExportRequest.md) |  | [optional] 
 **status** | **string** | Export status | [optional] 
 **total_messages** | **int** |  | [optional] 
 

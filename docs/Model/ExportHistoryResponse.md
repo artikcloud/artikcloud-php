@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
-**data** | [**\ArtikCloud\Model\ExportDataArray**](ExportDataArray.md) |  | [optional] 
+**data** | [**\ArtikCloud\ArtikCloud\Model\ExportDataArray**](ExportDataArray.md) |  | [optional] 
 **offset** | **int** |  | [optional] 
 **total** | **int** |  | [optional] 
 

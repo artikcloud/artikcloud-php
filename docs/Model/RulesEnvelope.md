@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **count** | **int** |  | [optional] 
-**data** | [**\ArtikCloud\Model\OutputRule[]**](OutputRule.md) |  | [optional] 
+**data** | [**\ArtikCloud\ArtikCloud\Model\OutputRule[]**](OutputRule.md) |  | [optional] 
 **offset** | **int** |  | [optional] 
 **total** | **int** |  | [optional] 
 

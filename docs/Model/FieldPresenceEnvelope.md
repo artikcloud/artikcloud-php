@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **end_date** | **int** |  | 
 **interval** | **string** |  | 
 **size** | **int** |  | 
-**data** | [**\ArtikCloud\Model\FieldPresence[]**](FieldPresence.md) |  | 
+**data** | [**\ArtikCloud\ArtikCloud\Model\FieldPresence[]**](FieldPresence.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

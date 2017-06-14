@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **createRule**
-> \ArtikCloud\Model\RuleEnvelope createRule($rule_info, $user_id)
+> \ArtikCloud\ArtikCloud\Model\RuleEnvelope createRule($rule_info, $user_id)
 
 Create Rule
 
@@ -26,7 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new ArtikCloud\Api\RulesApi();
-$rule_info = new \ArtikCloud\Model\RuleCreationInfo(); // \ArtikCloud\Model\RuleCreationInfo | Rule object that needs to be added
+$rule_info = new \ArtikCloud\ArtikCloud\Model\RuleCreationInfo(); // \ArtikCloud\ArtikCloud\Model\RuleCreationInfo | Rule object that needs to be added
 $user_id = "user_id_example"; // string | User ID
 
 try {
@@ -42,12 +42,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rule_info** | [**\ArtikCloud\Model\RuleCreationInfo**](../Model/\ArtikCloud\Model\RuleCreationInfo.md)| Rule object that needs to be added |
+ **rule_info** | [**\ArtikCloud\ArtikCloud\Model\RuleCreationInfo**](../Model/\ArtikCloud\ArtikCloud\Model\RuleCreationInfo.md)| Rule object that needs to be added |
  **user_id** | **string**| User ID |
 
 ### Return type
 
-[**\ArtikCloud\Model\RuleEnvelope**](../Model/RuleEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\RuleEnvelope**](../Model/RuleEnvelope.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteRule**
-> \ArtikCloud\Model\RuleEnvelope deleteRule($rule_id)
+> \ArtikCloud\ArtikCloud\Model\RuleEnvelope deleteRule($rule_id)
 
 Delete Rule
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\RuleEnvelope**](../Model/RuleEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\RuleEnvelope**](../Model/RuleEnvelope.md)
 
 ### Authorization
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRule**
-> \ArtikCloud\Model\RuleEnvelope getRule($rule_id)
+> \ArtikCloud\ArtikCloud\Model\RuleEnvelope getRule($rule_id)
 
 Get Rule
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\RuleEnvelope**](../Model/RuleEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\RuleEnvelope**](../Model/RuleEnvelope.md)
 
 ### Authorization
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **updateRule**
-> \ArtikCloud\Model\RuleEnvelope updateRule($rule_id, $rule_info)
+> \ArtikCloud\ArtikCloud\Model\RuleEnvelope updateRule($rule_id, $rule_info)
 
 Update Rule
 
@@ -173,7 +173,7 @@ ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS
 
 $api_instance = new ArtikCloud\Api\RulesApi();
 $rule_id = "rule_id_example"; // string | Rule ID.
-$rule_info = new \ArtikCloud\Model\RuleUpdateInfo(); // \ArtikCloud\Model\RuleUpdateInfo | Rule object that needs to be updated
+$rule_info = new \ArtikCloud\ArtikCloud\Model\RuleUpdateInfo(); // \ArtikCloud\ArtikCloud\Model\RuleUpdateInfo | Rule object that needs to be updated
 
 try {
     $result = $api_instance->updateRule($rule_id, $rule_info);
@@ -189,11 +189,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rule_id** | **string**| Rule ID. |
- **rule_info** | [**\ArtikCloud\Model\RuleUpdateInfo**](../Model/\ArtikCloud\Model\RuleUpdateInfo.md)| Rule object that needs to be updated |
+ **rule_info** | [**\ArtikCloud\ArtikCloud\Model\RuleUpdateInfo**](../Model/\ArtikCloud\ArtikCloud\Model\RuleUpdateInfo.md)| Rule object that needs to be updated |
 
 ### Return type
 
-[**\ArtikCloud\Model\RuleEnvelope**](../Model/RuleEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\RuleEnvelope**](../Model/RuleEnvelope.md)
 
 ### Authorization
 

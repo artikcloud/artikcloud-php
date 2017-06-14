@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **confirmUser**
-> \ArtikCloud\Model\DeviceRegConfirmUserResponseEnvelope confirmUser($registration_info)
+> \ArtikCloud\ArtikCloud\Model\DeviceRegConfirmUserResponseEnvelope confirmUser($registration_info)
 
 Confirm User
 
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 $api_instance = new ArtikCloud\Api\RegistrationsApi();
-$registration_info = new \ArtikCloud\Model\DeviceRegConfirmUserRequest(); // \ArtikCloud\Model\DeviceRegConfirmUserRequest | Device Registration information.
+$registration_info = new \ArtikCloud\ArtikCloud\Model\DeviceRegConfirmUserRequest(); // \ArtikCloud\ArtikCloud\Model\DeviceRegConfirmUserRequest | Device Registration information.
 
 try {
     $result = $api_instance->confirmUser($registration_info);
@@ -40,11 +40,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **registration_info** | [**\ArtikCloud\Model\DeviceRegConfirmUserRequest**](../Model/\ArtikCloud\Model\DeviceRegConfirmUserRequest.md)| Device Registration information. |
+ **registration_info** | [**\ArtikCloud\ArtikCloud\Model\DeviceRegConfirmUserRequest**](../Model/\ArtikCloud\ArtikCloud\Model\DeviceRegConfirmUserRequest.md)| Device Registration information. |
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceRegConfirmUserResponseEnvelope**](../Model/DeviceRegConfirmUserResponseEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceRegConfirmUserResponseEnvelope**](../Model/DeviceRegConfirmUserResponseEnvelope.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getRequestStatusForUser**
-> \ArtikCloud\Model\DeviceRegStatusResponseEnvelope getRequestStatusForUser($request_id)
+> \ArtikCloud\ArtikCloud\Model\DeviceRegStatusResponseEnvelope getRequestStatusForUser($request_id)
 
 Get Request Status For User
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\DeviceRegStatusResponseEnvelope**](../Model/DeviceRegStatusResponseEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\DeviceRegStatusResponseEnvelope**](../Model/DeviceRegStatusResponseEnvelope.md)
 
 ### Authorization
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **unregisterDevice**
-> \ArtikCloud\Model\UnregisterDeviceResponseEnvelope unregisterDevice($device_id)
+> \ArtikCloud\ArtikCloud\Model\UnregisterDeviceResponseEnvelope unregisterDevice($device_id)
 
 Unregister Device
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ArtikCloud\Model\UnregisterDeviceResponseEnvelope**](../Model/UnregisterDeviceResponseEnvelope.md)
+[**\ArtikCloud\ArtikCloud\Model\UnregisterDeviceResponseEnvelope**](../Model/UnregisterDeviceResponseEnvelope.md)
 
 ### Authorization
 
