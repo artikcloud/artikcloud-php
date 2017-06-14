@@ -3,17 +3,17 @@
     "version": "2.1.0",
     "description": "",
     "keywords": [
-        "swagger",
+        "artikcloud",
         "php",
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "http://developer.artik.cloud",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "ARTIK Cloud Evangelism",
+            "homepage": "https://developer.artik.cloud"
         }
     ],
     "require": {
