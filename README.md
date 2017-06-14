@@ -69,7 +69,7 @@ try {
 ?>
 ```
 
-## Documentation for API Endpoints 
+## Documentation for API Endpoints
 
 All URIs are relative to *https://api.artik.cloud/v1.1*
 
@@ -104,6 +104,13 @@ Class | Method | HTTP request | Description
 *DevicesManagementApi* | [**updateServerProperties**](docs/Api/DevicesManagementApi.md#updateserverproperties) | **POST** /devicemgmt/devices/{did}/serverproperties | Updates a device&#39;s server properties.
 *DevicesManagementApi* | [**updateTask**](docs/Api/DevicesManagementApi.md#updatetask) | **PUT** /devicemgmt/tasks/{tid} | Updates a task for all devices - For now just allows changing the state to cancelled.
 *DevicesManagementApi* | [**updateTaskForDevice**](docs/Api/DevicesManagementApi.md#updatetaskfordevice) | **PUT** /devicemgmt/tasks/{tid}/devices/{did} | Updates a task for a specific device - For now just allows changing the state to cancelled.
+*DevicessharesApi* | [**createShareForDevice**](docs/Api/DevicessharesApi.md#createsharefordevice) | **POST** in/api/devices/{deviceId}/shares | Share a device
+*DevicessharesApi* | [**deleteSharingForDevice**](docs/Api/DevicessharesApi.md#deletesharingfordevice) | **DELETE** in/api/devices/{deviceId}/shares/{shareId} | Delete specific share of the given device id
+*DevicessharesApi* | [**getAllSharesForDevice**](docs/Api/DevicessharesApi.md#getallsharesfordevice) | **GET** in/api/devices/{deviceId}/shares | List all shares for the given device id
+*DevicessharesApi* | [**getSharingForDevice**](docs/Api/DevicessharesApi.md#getsharingfordevice) | **GET** in/api/devices/{deviceId}/shares/{shareId} | Get specific share of the given device id
+*DevicestatusApi* | [**getDeviceStatus**](docs/Api/DevicestatusApi.md#getdevicestatus) | **GET** /devices/{deviceId}/status | Get Device Status
+*DevicestatusApi* | [**getDevicesStatus**](docs/Api/DevicestatusApi.md#getdevicesstatus) | **GET** /devices/status | Get Devices Status
+*DevicestatusApi* | [**putDeviceStatus**](docs/Api/DevicestatusApi.md#putdevicestatus) | **PUT** /devices/{deviceId}/status | Update Device Status
 *ExportApi* | [**exportRequest**](docs/Api/ExportApi.md#exportrequest) | **POST** /messages/export | Create Export Request
 *ExportApi* | [**getExportHistory**](docs/Api/ExportApi.md#getexporthistory) | **GET** /messages/export/history | Get Export History
 *ExportApi* | [**getExportResult**](docs/Api/ExportApi.md#getexportresult) | **GET** /messages/export/{exportId}/result | Get Export Result
@@ -124,6 +131,12 @@ Class | Method | HTTP request | Description
 *RulesApi* | [**deleteRule**](docs/Api/RulesApi.md#deleterule) | **DELETE** /rules/{ruleId} | Delete Rule
 *RulesApi* | [**getRule**](docs/Api/RulesApi.md#getrule) | **GET** /rules/{ruleId} | Get Rule
 *RulesApi* | [**updateRule**](docs/Api/RulesApi.md#updaterule) | **PUT** /rules/{ruleId} | Update Rule
+*SubscriptionsApi* | [**createSubscription**](docs/Api/SubscriptionsApi.md#createsubscription) | **POST** /subscriptions | Create Subscription
+*SubscriptionsApi* | [**deleteSubscription**](docs/Api/SubscriptionsApi.md#deletesubscription) | **DELETE** /subscriptions/{subId} | Delete Subscription
+*SubscriptionsApi* | [**getAllSubscriptions**](docs/Api/SubscriptionsApi.md#getallsubscriptions) | **GET** /subscriptions | Get All Subscriptions
+*SubscriptionsApi* | [**getMessages**](docs/Api/SubscriptionsApi.md#getmessages) | **GET** /notifications/{notifId}/messages | Get Messages
+*SubscriptionsApi* | [**getSubscription**](docs/Api/SubscriptionsApi.md#getsubscription) | **GET** /subscriptions/{subId} | Get Subscription
+*SubscriptionsApi* | [**validateSubscription**](docs/Api/SubscriptionsApi.md#validatesubscription) | **POST** /subscriptions/{subId}/validate | Validate Subscription
 *TagsApi* | [**getTagCategories**](docs/Api/TagsApi.md#gettagcategories) | **GET** /tags/categories | Get all categories
 *TagsApi* | [**getTagSuggestions**](docs/Api/TagsApi.md#gettagsuggestions) | **GET** /tags/suggestions | Get tag suggestions
 *TagsApi* | [**getTagsByCategories**](docs/Api/TagsApi.md#gettagsbycategories) | **GET** /tags | Get all tags of categories
@@ -137,6 +150,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**getUserDevices**](docs/Api/UsersApi.md#getuserdevices) | **GET** /users/{userId}/devices | Get User Devices
 *UsersApi* | [**getUserProperties**](docs/Api/UsersApi.md#getuserproperties) | **GET** /users/{userId}/properties | Get User application properties
 *UsersApi* | [**getUserRules**](docs/Api/UsersApi.md#getuserrules) | **GET** /users/{userId}/rules | Get User Rules
+*UsersApi* | [**listAllSharesForUser**](docs/Api/UsersApi.md#listallsharesforuser) | **GET** in/api/users/{userId}/shares | Get User shares
 *UsersApi* | [**updateUserProperties**](docs/Api/UsersApi.md#updateuserproperties) | **PUT** /users/{userId}/properties | Update User Application Properties
 
 
@@ -167,6 +181,16 @@ Class | Method | HTTP request | Description
  - [DeviceRegConfirmUserResponseEnvelope](docs/Model/DeviceRegConfirmUserResponseEnvelope.md)
  - [DeviceRegStatusResponse](docs/Model/DeviceRegStatusResponse.md)
  - [DeviceRegStatusResponseEnvelope](docs/Model/DeviceRegStatusResponseEnvelope.md)
+ - [DeviceShareInfo](docs/Model/DeviceShareInfo.md)
+ - [DeviceSharing](docs/Model/DeviceSharing.md)
+ - [DeviceSharingArray](docs/Model/DeviceSharingArray.md)
+ - [DeviceSharingEnvelope](docs/Model/DeviceSharingEnvelope.md)
+ - [DeviceSharingId](docs/Model/DeviceSharingId.md)
+ - [DeviceStatus](docs/Model/DeviceStatus.md)
+ - [DeviceStatusBatch](docs/Model/DeviceStatusBatch.md)
+ - [DeviceStatusData](docs/Model/DeviceStatusData.md)
+ - [DeviceStatusPut](docs/Model/DeviceStatusPut.md)
+ - [DeviceStatusPutData](docs/Model/DeviceStatusPutData.md)
  - [DeviceTask](docs/Model/DeviceTask.md)
  - [DeviceTaskUpdateRequest](docs/Model/DeviceTaskUpdateRequest.md)
  - [DeviceTaskUpdateResponse](docs/Model/DeviceTaskUpdateResponse.md)
@@ -215,6 +239,9 @@ Class | Method | HTTP request | Description
  - [NormalizedActionsEnvelope](docs/Model/NormalizedActionsEnvelope.md)
  - [NormalizedMessage](docs/Model/NormalizedMessage.md)
  - [NormalizedMessagesEnvelope](docs/Model/NormalizedMessagesEnvelope.md)
+ - [NotifMessage](docs/Model/NotifMessage.md)
+ - [NotifMessageArray](docs/Model/NotifMessageArray.md)
+ - [NotifMessagesResponse](docs/Model/NotifMessagesResponse.md)
  - [OutputRule](docs/Model/OutputRule.md)
  - [PresenceEnvelope](docs/Model/PresenceEnvelope.md)
  - [PresenceModel](docs/Model/PresenceModel.md)
@@ -231,6 +258,11 @@ Class | Method | HTTP request | Description
  - [SnapshotResponse](docs/Model/SnapshotResponse.md)
  - [SnapshotResponses](docs/Model/SnapshotResponses.md)
  - [SnapshotsResponseEnvelope](docs/Model/SnapshotsResponseEnvelope.md)
+ - [Subscription](docs/Model/Subscription.md)
+ - [SubscriptionArray](docs/Model/SubscriptionArray.md)
+ - [SubscriptionEnvelope](docs/Model/SubscriptionEnvelope.md)
+ - [SubscriptionInfo](docs/Model/SubscriptionInfo.md)
+ - [SubscriptionsEnvelope](docs/Model/SubscriptionsEnvelope.md)
  - [Tag](docs/Model/Tag.md)
  - [TagArray](docs/Model/TagArray.md)
  - [TagsEnvelope](docs/Model/TagsEnvelope.md)
@@ -260,8 +292,10 @@ Class | Method | HTTP request | Description
  - [TokenResponse](docs/Model/TokenResponse.md)
  - [UnregisterDeviceResponse](docs/Model/UnregisterDeviceResponse.md)
  - [UnregisterDeviceResponseEnvelope](docs/Model/UnregisterDeviceResponseEnvelope.md)
+ - [UpdateParameters](docs/Model/UpdateParameters.md)
  - [User](docs/Model/User.md)
  - [UserEnvelope](docs/Model/UserEnvelope.md)
+ - [ValidationCallbackInfo](docs/Model/ValidationCallbackInfo.md)
  - [WebSocketError](docs/Model/WebSocketError.md)
 
 
