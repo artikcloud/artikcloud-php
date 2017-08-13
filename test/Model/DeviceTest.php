@@ -194,4 +194,20 @@ class DeviceTest extends \PHPUnit_Framework_TestCase
 
     }
 
+    /**
+     * Test attribute "shared_with_others"
+     */
+    public function testPropertySharedWithOthers()
+    {
+
+    }
+
+    /**
+     * Test attribute "shared_with_me"
+     */
+    public function testPropertySharedWithMe()
+    {
+
+    }
+
 }
