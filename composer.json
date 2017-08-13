@@ -1,6 +1,6 @@
 {
     "name": "artikcloud/artikcloud-php",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "",
     "keywords": [
         "artikcloud",
@@ -12,7 +12,7 @@
     "license": "proprietary",
     "authors": [
         {
-            "name": "ARTIK Cloud Evangelism",
+            "name": "ARTIK Cloud SDKs",
             "homepage": "https://developer.artik.cloud"
         }
     ],

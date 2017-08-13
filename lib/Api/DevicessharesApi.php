@@ -1,6 +1,6 @@
 <?php
 /**
- * DevicessharesApi
+ * DevicesSharesApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \ArtikCloud\Configuration;
 use \ArtikCloud\ObjectSerializer;
 
 /**
- * DevicessharesApi Class Doc Comment
+ * DevicesSharesApi Class Doc Comment
  *
  * @category Class
  * @package  ArtikCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DevicessharesApi
+class DevicesSharesApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class DevicessharesApi
      *
      * @param \ArtikCloud\ApiClient $apiClient set the API client
      *
-     * @return DevicessharesApi
+     * @return DevicesSharesApi
      */
     public function setApiClient(\ArtikCloud\ApiClient $apiClient)
     {
@@ -124,7 +124,7 @@ class DevicessharesApi
             throw new \InvalidArgumentException('Missing the required parameter $device_share_info when calling createShareForDevice');
         }
         // parse inputs
-        $resourcePath = "in/api/devices/{deviceId}/shares";
+        $resourcePath = "/devices/{deviceId}/shares";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -171,7 +171,7 @@ class DevicessharesApi
                 $httpBody,
                 $headerParams,
                 '\ArtikCloud\ArtikCloud\Model\DeviceSharingId',
-                'in/api/devices/{deviceId}/shares'
+                '/devices/{deviceId}/shares'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\ArtikCloud\ArtikCloud\Model\DeviceSharingId', $httpHeader), $statusCode, $httpHeader];
@@ -224,7 +224,7 @@ class DevicessharesApi
             throw new \InvalidArgumentException('Missing the required parameter $share_id when calling deleteSharingForDevice');
         }
         // parse inputs
-        $resourcePath = "in/api/devices/{deviceId}/shares/{shareId}";
+        $resourcePath = "/devices/{deviceId}/shares/{shareId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -274,7 +274,7 @@ class DevicessharesApi
                 $httpBody,
                 $headerParams,
                 '\ArtikCloud\ArtikCloud\Model\DeviceSharingId',
-                'in/api/devices/{deviceId}/shares/{shareId}'
+                '/devices/{deviceId}/shares/{shareId}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\ArtikCloud\ArtikCloud\Model\DeviceSharingId', $httpHeader), $statusCode, $httpHeader];
@@ -325,7 +325,7 @@ class DevicessharesApi
             throw new \InvalidArgumentException('Missing the required parameter $device_id when calling getAllSharesForDevice');
         }
         // parse inputs
-        $resourcePath = "in/api/devices/{deviceId}/shares";
+        $resourcePath = "/devices/{deviceId}/shares";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -375,7 +375,7 @@ class DevicessharesApi
                 $httpBody,
                 $headerParams,
                 '\ArtikCloud\ArtikCloud\Model\DeviceSharingEnvelope',
-                'in/api/devices/{deviceId}/shares'
+                '/devices/{deviceId}/shares'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\ArtikCloud\ArtikCloud\Model\DeviceSharingEnvelope', $httpHeader), $statusCode, $httpHeader];
@@ -428,7 +428,7 @@ class DevicessharesApi
             throw new \InvalidArgumentException('Missing the required parameter $share_id when calling getSharingForDevice');
         }
         // parse inputs
-        $resourcePath = "in/api/devices/{deviceId}/shares/{shareId}";
+        $resourcePath = "/devices/{deviceId}/shares/{shareId}";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -478,7 +478,7 @@ class DevicessharesApi
                 $httpBody,
                 $headerParams,
                 '\ArtikCloud\ArtikCloud\Model\DeviceSharing',
-                'in/api/devices/{deviceId}/shares/{shareId}'
+                '/devices/{deviceId}/shares/{shareId}'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\ArtikCloud\ArtikCloud\Model\DeviceSharing', $httpHeader), $statusCode, $httpHeader];

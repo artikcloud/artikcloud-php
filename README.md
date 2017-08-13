@@ -104,13 +104,13 @@ Class | Method | HTTP request | Description
 *DevicesManagementApi* | [**updateServerProperties**](docs/Api/DevicesManagementApi.md#updateserverproperties) | **POST** /devicemgmt/devices/{did}/serverproperties | Updates a device&#39;s server properties.
 *DevicesManagementApi* | [**updateTask**](docs/Api/DevicesManagementApi.md#updatetask) | **PUT** /devicemgmt/tasks/{tid} | Updates a task for all devices - For now just allows changing the state to cancelled.
 *DevicesManagementApi* | [**updateTaskForDevice**](docs/Api/DevicesManagementApi.md#updatetaskfordevice) | **PUT** /devicemgmt/tasks/{tid}/devices/{did} | Updates a task for a specific device - For now just allows changing the state to cancelled.
-*DevicessharesApi* | [**createShareForDevice**](docs/Api/DevicessharesApi.md#createsharefordevice) | **POST** in/api/devices/{deviceId}/shares | Share a device
-*DevicessharesApi* | [**deleteSharingForDevice**](docs/Api/DevicessharesApi.md#deletesharingfordevice) | **DELETE** in/api/devices/{deviceId}/shares/{shareId} | Delete specific share of the given device id
-*DevicessharesApi* | [**getAllSharesForDevice**](docs/Api/DevicessharesApi.md#getallsharesfordevice) | **GET** in/api/devices/{deviceId}/shares | List all shares for the given device id
-*DevicessharesApi* | [**getSharingForDevice**](docs/Api/DevicessharesApi.md#getsharingfordevice) | **GET** in/api/devices/{deviceId}/shares/{shareId} | Get specific share of the given device id
-*DevicestatusApi* | [**getDeviceStatus**](docs/Api/DevicestatusApi.md#getdevicestatus) | **GET** /devices/{deviceId}/status | Get Device Status
-*DevicestatusApi* | [**getDevicesStatus**](docs/Api/DevicestatusApi.md#getdevicesstatus) | **GET** /devices/status | Get Devices Status
-*DevicestatusApi* | [**putDeviceStatus**](docs/Api/DevicestatusApi.md#putdevicestatus) | **PUT** /devices/{deviceId}/status | Update Device Status
+*DevicesSharesApi* | [**createShareForDevice**](docs/Api/DevicesSharesApi.md#createsharefordevice) | **POST** /devices/{deviceId}/shares | Share a device
+*DevicesSharesApi* | [**deleteSharingForDevice**](docs/Api/DevicesSharesApi.md#deletesharingfordevice) | **DELETE** /devices/{deviceId}/shares/{shareId} | Delete specific share of the given device id
+*DevicesSharesApi* | [**getAllSharesForDevice**](docs/Api/DevicesSharesApi.md#getallsharesfordevice) | **GET** /devices/{deviceId}/shares | List all shares for the given device id
+*DevicesSharesApi* | [**getSharingForDevice**](docs/Api/DevicesSharesApi.md#getsharingfordevice) | **GET** /devices/{deviceId}/shares/{shareId} | Get specific share of the given device id
+*DevicesStatusApi* | [**getDeviceStatus**](docs/Api/DevicesStatusApi.md#getdevicestatus) | **GET** /devices/{deviceId}/status | Get Device Status
+*DevicesStatusApi* | [**getDevicesStatus**](docs/Api/DevicesStatusApi.md#getdevicesstatus) | **GET** /devices/status | Get Devices Status
+*DevicesStatusApi* | [**putDeviceStatus**](docs/Api/DevicesStatusApi.md#putdevicestatus) | **PUT** /devices/{deviceId}/status | Update Device Status
 *ExportApi* | [**exportRequest**](docs/Api/ExportApi.md#exportrequest) | **POST** /messages/export | Create Export Request
 *ExportApi* | [**getExportHistory**](docs/Api/ExportApi.md#getexporthistory) | **GET** /messages/export/history | Get Export History
 *ExportApi* | [**getExportResult**](docs/Api/ExportApi.md#getexportresult) | **GET** /messages/export/{exportId}/result | Get Export Result
@@ -150,7 +150,7 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**getUserDevices**](docs/Api/UsersApi.md#getuserdevices) | **GET** /users/{userId}/devices | Get User Devices
 *UsersApi* | [**getUserProperties**](docs/Api/UsersApi.md#getuserproperties) | **GET** /users/{userId}/properties | Get User application properties
 *UsersApi* | [**getUserRules**](docs/Api/UsersApi.md#getuserrules) | **GET** /users/{userId}/rules | Get User Rules
-*UsersApi* | [**listAllSharesForUser**](docs/Api/UsersApi.md#listallsharesforuser) | **GET** in/api/users/{userId}/shares | Get User shares
+*UsersApi* | [**listAllSharesForUser**](docs/Api/UsersApi.md#listallsharesforuser) | **GET** /users/{userId}/shares | Get User shares
 *UsersApi* | [**updateUserProperties**](docs/Api/UsersApi.md#updateuserproperties) | **PUT** /users/{userId}/properties | Update User Application Properties
 
 

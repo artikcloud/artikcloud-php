@@ -693,12 +693,13 @@ class UsersApi
      * @param bool $exclude_disabled Exclude disabled rules in the result. (optional)
      * @param int $count Desired count of items in the result set. (optional)
      * @param int $offset Offset for pagination. (optional)
+     * @param string $owner Rule owner (optional)
      * @throws \ArtikCloud\ApiException on non-2xx response
      * @return \ArtikCloud\ArtikCloud\Model\RulesEnvelope
      */
-    public function getUserRules($user_id, $exclude_disabled = null, $count = null, $offset = null)
+    public function getUserRules($user_id, $exclude_disabled = null, $count = null, $offset = null, $owner = null)
     {
-        list($response) = $this->getUserRulesWithHttpInfo($user_id, $exclude_disabled, $count, $offset);
+        list($response) = $this->getUserRulesWithHttpInfo($user_id, $exclude_disabled, $count, $offset, $owner);
         return $response;
     }
 
@@ -711,10 +712,11 @@ class UsersApi
      * @param bool $exclude_disabled Exclude disabled rules in the result. (optional)
      * @param int $count Desired count of items in the result set. (optional)
      * @param int $offset Offset for pagination. (optional)
+     * @param string $owner Rule owner (optional)
      * @throws \ArtikCloud\ApiException on non-2xx response
      * @return array of \ArtikCloud\ArtikCloud\Model\RulesEnvelope, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserRulesWithHttpInfo($user_id, $exclude_disabled = null, $count = null, $offset = null)
+    public function getUserRulesWithHttpInfo($user_id, $exclude_disabled = null, $count = null, $offset = null, $owner = null)
     {
         // verify the required parameter 'user_id' is set
         if ($user_id === null) {
@@ -743,6 +745,10 @@ class UsersApi
         // query params
         if ($offset !== null) {
             $queryParams['offset'] = $this->apiClient->getSerializer()->toQueryValue($offset);
+        }
+        // query params
+        if ($owner !== null) {
+            $queryParams['owner'] = $this->apiClient->getSerializer()->toQueryValue($owner);
         }
         // path params
         if ($user_id !== null) {
@@ -832,7 +838,7 @@ class UsersApi
             throw new \InvalidArgumentException('Missing the required parameter $filter when calling listAllSharesForUser');
         }
         // parse inputs
-        $resourcePath = "in/api/users/{userId}/shares";
+        $resourcePath = "/users/{userId}/shares";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -886,7 +892,7 @@ class UsersApi
                 $httpBody,
                 $headerParams,
                 '\ArtikCloud\ArtikCloud\Model\DeviceSharingEnvelope',
-                'in/api/users/{userId}/shares'
+                '/users/{userId}/shares'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\ArtikCloud\ArtikCloud\Model\DeviceSharingEnvelope', $httpHeader), $statusCode, $httpHeader];

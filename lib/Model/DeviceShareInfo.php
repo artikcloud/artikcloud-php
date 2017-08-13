@@ -55,7 +55,7 @@ class DeviceShareInfo implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'uid' => 'string'
+        'email' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -68,7 +68,7 @@ class DeviceShareInfo implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'uid' => 'uid'
+        'email' => 'email'
     ];
 
 
@@ -77,7 +77,7 @@ class DeviceShareInfo implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'uid' => 'setUid'
+        'email' => 'setEmail'
     ];
 
 
@@ -86,7 +86,7 @@ class DeviceShareInfo implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'uid' => 'getUid'
+        'email' => 'getEmail'
     ];
 
     public static function attributeMap()
@@ -120,7 +120,7 @@ class DeviceShareInfo implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['uid'] = isset($data['uid']) ? $data['uid'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
     }
 
     /**
@@ -149,22 +149,22 @@ class DeviceShareInfo implements ArrayAccess
 
 
     /**
-     * Gets uid
+     * Gets email
      * @return string
      */
-    public function getUid()
+    public function getEmail()
     {
-        return $this->container['uid'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets uid
-     * @param string $uid User email
+     * Sets email
+     * @param string $email User email
      * @return $this
      */
-    public function setUid($uid)
+    public function setEmail($email)
     {
-        $this->container['uid'] = $uid;
+        $this->container['email'] = $email;
 
         return $this;
     }

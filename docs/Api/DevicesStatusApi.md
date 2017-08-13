@@ -1,12 +1,12 @@
-# ArtikCloud\DevicestatusApi
+# ArtikCloud\DevicesStatusApi
 
 All URIs are relative to *https://api.artik.cloud/v1.1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getDeviceStatus**](DevicestatusApi.md#getDeviceStatus) | **GET** /devices/{deviceId}/status | Get Device Status
-[**getDevicesStatus**](DevicestatusApi.md#getDevicesStatus) | **GET** /devices/status | Get Devices Status
-[**putDeviceStatus**](DevicestatusApi.md#putDeviceStatus) | **PUT** /devices/{deviceId}/status | Update Device Status
+[**getDeviceStatus**](DevicesStatusApi.md#getDeviceStatus) | **GET** /devices/{deviceId}/status | Get Device Status
+[**getDevicesStatus**](DevicesStatusApi.md#getDevicesStatus) | **GET** /devices/status | Get Devices Status
+[**putDeviceStatus**](DevicesStatusApi.md#putDeviceStatus) | **PUT** /devices/{deviceId}/status | Update Device Status
 
 
 # **getDeviceStatus**
@@ -24,7 +24,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: artikcloud_oauth
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ArtikCloud\Api\DevicestatusApi();
+$api_instance = new ArtikCloud\Api\DevicesStatusApi();
 $device_id = "device_id_example"; // string | Device ID.
 $include_snapshot = true; // bool | Include device snapshot into the response
 $include_snapshot_timestamp = true; // bool | Include device snapshot timestamp into the response
@@ -33,7 +33,7 @@ try {
     $result = $api_instance->getDeviceStatus($device_id, $include_snapshot, $include_snapshot_timestamp);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DevicestatusApi->getDeviceStatus: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DevicesStatusApi->getDeviceStatus: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -76,7 +76,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: artikcloud_oauth
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ArtikCloud\Api\DevicestatusApi();
+$api_instance = new ArtikCloud\Api\DevicesStatusApi();
 $dids = "dids_example"; // string | List of device ids (comma-separated) for which the statuses are requested.
 $include_snapshot = true; // bool | Include device snapshot into the response
 $include_snapshot_timestamp = true; // bool | Include device snapshot timestamp into the response
@@ -85,7 +85,7 @@ try {
     $result = $api_instance->getDevicesStatus($dids, $include_snapshot, $include_snapshot_timestamp);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DevicestatusApi->getDevicesStatus: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DevicesStatusApi->getDevicesStatus: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -128,7 +128,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure OAuth2 access token for authorization: artikcloud_oauth
 ArtikCloud\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$api_instance = new ArtikCloud\Api\DevicestatusApi();
+$api_instance = new ArtikCloud\Api\DevicesStatusApi();
 $device_id = "device_id_example"; // string | Device ID.
 $body = new \ArtikCloud\ArtikCloud\Model\DeviceStatusPut(); // \ArtikCloud\ArtikCloud\Model\DeviceStatusPut | Body
 
@@ -136,7 +136,7 @@ try {
     $result = $api_instance->putDeviceStatus($device_id, $body);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DevicestatusApi->putDeviceStatus: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DevicesStatusApi->putDeviceStatus: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

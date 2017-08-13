@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**getUserDevices**](UsersApi.md#getUserDevices) | **GET** /users/{userId}/devices | Get User Devices
 [**getUserProperties**](UsersApi.md#getUserProperties) | **GET** /users/{userId}/properties | Get User application properties
 [**getUserRules**](UsersApi.md#getUserRules) | **GET** /users/{userId}/rules | Get User Rules
-[**listAllSharesForUser**](UsersApi.md#listAllSharesForUser) | **GET** in/api/users/{userId}/shares | Get User shares
+[**listAllSharesForUser**](UsersApi.md#listAllSharesForUser) | **GET** /users/{userId}/shares | Get User shares
 [**updateUserProperties**](UsersApi.md#updateUserProperties) | **PUT** /users/{userId}/properties | Update User Application Properties
 
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserRules**
-> \ArtikCloud\ArtikCloud\Model\RulesEnvelope getUserRules($user_id, $exclude_disabled, $count, $offset)
+> \ArtikCloud\ArtikCloud\Model\RulesEnvelope getUserRules($user_id, $exclude_disabled, $count, $offset, $owner)
 
 Get User Rules
 
@@ -343,9 +343,10 @@ $user_id = "user_id_example"; // string | User ID.
 $exclude_disabled = true; // bool | Exclude disabled rules in the result.
 $count = 56; // int | Desired count of items in the result set.
 $offset = 56; // int | Offset for pagination.
+$owner = "owner_example"; // string | Rule owner
 
 try {
-    $result = $api_instance->getUserRules($user_id, $exclude_disabled, $count, $offset);
+    $result = $api_instance->getUserRules($user_id, $exclude_disabled, $count, $offset, $owner);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUserRules: ', $e->getMessage(), PHP_EOL;
@@ -361,6 +362,7 @@ Name | Type | Description  | Notes
  **exclude_disabled** | **bool**| Exclude disabled rules in the result. | [optional]
  **count** | **int**| Desired count of items in the result set. | [optional]
  **offset** | **int**| Offset for pagination. | [optional]
+ **owner** | **string**| Rule owner | [optional]
 
 ### Return type
 

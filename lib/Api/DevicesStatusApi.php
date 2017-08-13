@@ -1,6 +1,6 @@
 <?php
 /**
- * DevicestatusApi
+ * DevicesStatusApi
  * PHP version 5
  *
  * @category Class
@@ -34,14 +34,14 @@ use \ArtikCloud\Configuration;
 use \ArtikCloud\ObjectSerializer;
 
 /**
- * DevicestatusApi Class Doc Comment
+ * DevicesStatusApi Class Doc Comment
  *
  * @category Class
  * @package  ArtikCloud
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class DevicestatusApi
+class DevicesStatusApi
 {
     /**
      * API Client
@@ -79,7 +79,7 @@ class DevicestatusApi
      *
      * @param \ArtikCloud\ApiClient $apiClient set the API client
      *
-     * @return DevicestatusApi
+     * @return DevicesStatusApi
      */
     public function setApiClient(\ArtikCloud\ApiClient $apiClient)
     {
