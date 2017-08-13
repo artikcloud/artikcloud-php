@@ -44,7 +44,6 @@ use \ArtikCloud\Configuration;
 use \ArtikCloud\ApiClient;
 use \ArtikCloud\ApiException;
 use \ArtikCloud\ObjectSerializer;
-use \ArtikCloudTests\ArtikTestCase;
 
 /**
  * DeviceTypesApiTest Class Doc Comment
