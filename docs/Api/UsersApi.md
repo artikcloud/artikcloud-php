@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getUserDevices**
-> \ArtikCloud\ArtikCloud\Model\DevicesEnvelope getUserDevices($user_id, $offset, $count, $include_properties, $owner, $include_share_info)
+> \ArtikCloud\ArtikCloud\Model\DevicesEnvelope getUserDevices($user_id, $offset, $count, $include_properties, $owner, $include_share_info, $dtid)
 
 Get User Devices
 
@@ -237,9 +237,10 @@ $count = 56; // int | Desired count of items in the result set
 $include_properties = true; // bool | Optional. Boolean (true/false) - If false, only return the user's device types. If true, also return device types shared by other users.
 $owner = "owner_example"; // string | Return owned and/or shared devices. Default to ALL.
 $include_share_info = true; // bool | Include share info
+$dtid = "dtid_example"; // string | Return only devices of this device type. If empty, assumes all device types allowed by the authorization.
 
 try {
-    $result = $api_instance->getUserDevices($user_id, $offset, $count, $include_properties, $owner, $include_share_info);
+    $result = $api_instance->getUserDevices($user_id, $offset, $count, $include_properties, $owner, $include_share_info, $dtid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->getUserDevices: ', $e->getMessage(), PHP_EOL;
@@ -257,6 +258,7 @@ Name | Type | Description  | Notes
  **include_properties** | **bool**| Optional. Boolean (true/false) - If false, only return the user&#39;s device types. If true, also return device types shared by other users. | [optional]
  **owner** | **string**| Return owned and/or shared devices. Default to ALL. | [optional]
  **include_share_info** | **bool**| Include share info | [optional]
+ **dtid** | **string**| Return only devices of this device type. If empty, assumes all device types allowed by the authorization. | [optional]
 
 ### Return type
 

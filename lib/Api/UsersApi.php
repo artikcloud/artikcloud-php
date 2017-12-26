@@ -481,12 +481,13 @@ class UsersApi
      * @param bool $include_properties Optional. Boolean (true/false) - If false, only return the user&#39;s device types. If true, also return device types shared by other users. (optional)
      * @param string $owner Return owned and/or shared devices. Default to ALL. (optional)
      * @param bool $include_share_info Include share info (optional)
+     * @param string $dtid Return only devices of this device type. If empty, assumes all device types allowed by the authorization. (optional)
      * @throws \ArtikCloud\ApiException on non-2xx response
      * @return \ArtikCloud\ArtikCloud\Model\DevicesEnvelope
      */
-    public function getUserDevices($user_id, $offset = null, $count = null, $include_properties = null, $owner = null, $include_share_info = null)
+    public function getUserDevices($user_id, $offset = null, $count = null, $include_properties = null, $owner = null, $include_share_info = null, $dtid = null)
     {
-        list($response) = $this->getUserDevicesWithHttpInfo($user_id, $offset, $count, $include_properties, $owner, $include_share_info);
+        list($response) = $this->getUserDevicesWithHttpInfo($user_id, $offset, $count, $include_properties, $owner, $include_share_info, $dtid);
         return $response;
     }
 
@@ -501,10 +502,11 @@ class UsersApi
      * @param bool $include_properties Optional. Boolean (true/false) - If false, only return the user&#39;s device types. If true, also return device types shared by other users. (optional)
      * @param string $owner Return owned and/or shared devices. Default to ALL. (optional)
      * @param bool $include_share_info Include share info (optional)
+     * @param string $dtid Return only devices of this device type. If empty, assumes all device types allowed by the authorization. (optional)
      * @throws \ArtikCloud\ApiException on non-2xx response
      * @return array of \ArtikCloud\ArtikCloud\Model\DevicesEnvelope, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getUserDevicesWithHttpInfo($user_id, $offset = null, $count = null, $include_properties = null, $owner = null, $include_share_info = null)
+    public function getUserDevicesWithHttpInfo($user_id, $offset = null, $count = null, $include_properties = null, $owner = null, $include_share_info = null, $dtid = null)
     {
         // verify the required parameter 'user_id' is set
         if ($user_id === null) {
@@ -541,6 +543,10 @@ class UsersApi
         // query params
         if ($include_share_info !== null) {
             $queryParams['includeShareInfo'] = $this->apiClient->getSerializer()->toQueryValue($include_share_info);
+        }
+        // query params
+        if ($dtid !== null) {
+            $queryParams['dtid'] = $this->apiClient->getSerializer()->toQueryValue($dtid);
         }
         // path params
         if ($user_id !== null) {

@@ -3,6 +3,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**data** | **map[string,object]** | Message Payload. | [optional] 
+**cid** | **string** | Confirmation ID. | [optional] 
+**ddid** | **string** | Destination Device ID. | [optional] 
+**sdid** | **string** | Source Device ID. | [optional] 
+**ts** | **int** | Timestamp (past, present or future). Defaults to current time if not provided. | [optional] 
+**type** | **string** | Type. | [optional] [default to 'message']
 **mid** | **string** | Message ID. | [optional] 
 **uid** | **string** | User ID. | [optional] 
 **sdtid** | **string** | Source Device Type ID. | [optional] 

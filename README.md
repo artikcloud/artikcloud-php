@@ -2,6 +2,7 @@ ARTIK Cloud PHP SDK
 ===================
 
 This SDK helps you connect your PHP scripts to ARTIK Cloud. The SDK exposes a number of methods to easily execute REST API calls to ARTIK Cloud. 
+- Package version: 2.2.2
 
 ## Requirements
 
@@ -124,6 +125,11 @@ Class | Method | HTTP request | Description
 *MessagesApi* | [**getNormalizedMessages**](docs/Api/MessagesApi.md#getnormalizedmessages) | **GET** /messages | Get Normalized Messages
 *MessagesApi* | [**sendActions**](docs/Api/MessagesApi.md#sendactions) | **POST** /actions | Send Actions
 *MessagesApi* | [**sendMessage**](docs/Api/MessagesApi.md#sendmessage) | **POST** /messages | Send Message
+*MonetizationApi* | [**createPricingTiers**](docs/Api/MonetizationApi.md#createpricingtiers) | **POST** /pricing/devicetypes/{dtid}/pricingtiers | Define devicetype&#39;s pricing tiers.
+*MonetizationApi* | [**getPricingTiers**](docs/Api/MonetizationApi.md#getpricingtiers) | **GET** /pricing/devices/{did}/pricingtiers | Get a device&#39;s pricing tiers
+*MonetizationApi* | [**getThePricingTiers**](docs/Api/MonetizationApi.md#getthepricingtiers) | **GET** /pricing/devicetypes/{dtid}/pricingtiers | Get devicetype&#39;s pricing tiers.
+*MonetizationApi* | [**getUpgradePath**](docs/Api/MonetizationApi.md#getupgradepath) | **GET** /pricing/devices/{did}/revenueshare/upgradepath | Get upgrade path
+*MonetizationApi* | [**setPricingTier**](docs/Api/MonetizationApi.md#setpricingtier) | **PUT** /pricing/devices/{did}/pricingtiers | Set a device&#39;s pricing tier
 *RegistrationsApi* | [**confirmUser**](docs/Api/RegistrationsApi.md#confirmuser) | **PUT** /devices/registrations/pin | Confirm User
 *RegistrationsApi* | [**getRequestStatusForUser**](docs/Api/RegistrationsApi.md#getrequeststatusforuser) | **GET** /devices/registrations/{requestId}/status | Get Request Status For User
 *RegistrationsApi* | [**unregisterDevice**](docs/Api/RegistrationsApi.md#unregisterdevice) | **DELETE** /devices/{deviceId}/registrations | Unregister Device
@@ -152,6 +158,15 @@ Class | Method | HTTP request | Description
 *UsersApi* | [**getUserRules**](docs/Api/UsersApi.md#getuserrules) | **GET** /users/{userId}/rules | Get User Rules
 *UsersApi* | [**listAllSharesForUser**](docs/Api/UsersApi.md#listallsharesforuser) | **GET** /users/{userId}/shares | Get User shares
 *UsersApi* | [**updateUserProperties**](docs/Api/UsersApi.md#updateuserproperties) | **PUT** /users/{userId}/properties | Update User Application Properties
+*WhitelistingApi* | [**deleteVdid**](docs/Api/WhitelistingApi.md#deletevdid) | **DELETE** /devicetypes/{dtid}/whitelist/{vdid} | Delete a vdid from the devicetype whitelist.
+*WhitelistingApi* | [**deleteWhitelistCertificate**](docs/Api/WhitelistingApi.md#deletewhitelistcertificate) | **DELETE** /devicetypes/{dtid}/whitelist/certificates/{cid} | Delete a whitelist certificate associated with a devicetype.
+*WhitelistingApi* | [**enableWhitelist**](docs/Api/WhitelistingApi.md#enablewhitelist) | **PUT** /devicetypes/:dtid/whitelist/enable | Enable or disble whitelist feature of a device type
+*WhitelistingApi* | [**getRejectedRowList**](docs/Api/WhitelistingApi.md#getrejectedrowlist) | **GET** /devicetypes/{dtid}/whitelist/{uploadId}/rejectedRows | Get the list of rejected rows for an uploaded CSV file.
+*WhitelistingApi* | [**getUploadStatus**](docs/Api/WhitelistingApi.md#getuploadstatus) | **GET** /devicetypes/{dtid}/whitelist/{uploadId}/status | Get the status of a uploaded CSV file.
+*WhitelistingApi* | [**getWhitelist**](docs/Api/WhitelistingApi.md#getwhitelist) | **GET** /devicetypes/{dtid}/whitelist | Get whitelisted vdids of a device type.
+*WhitelistingApi* | [**getWhitelistCertificate**](docs/Api/WhitelistingApi.md#getwhitelistcertificate) | **GET** /devicetypes/{dtid}/whitelist/certificates | Get whitelist certificate of device type.
+*WhitelistingApi* | [**getWhitelistStatus**](docs/Api/WhitelistingApi.md#getwhiteliststatus) | **GET** /devicetypes/{dtid}/whitelist/status | Get the status of whitelist feature (enabled/disabled) of a device type.
+*WhitelistingApi* | [**uploadCSV**](docs/Api/WhitelistingApi.md#uploadcsv) | **POST** /devicetypes/{dtid}/whitelist | Upload a CSV file related to the Device Type.
 
 
 ## Documentation For Models
@@ -170,11 +185,21 @@ Class | Method | HTTP request | Description
  - [AggregatesHistogramResponse](docs/Model/AggregatesHistogramResponse.md)
  - [AggregatesResponse](docs/Model/AggregatesResponse.md)
  - [AppProperties](docs/Model/AppProperties.md)
+ - [CertificateData](docs/Model/CertificateData.md)
+ - [CertificateEnvelope](docs/Model/CertificateEnvelope.md)
+ - [CertificateFields](docs/Model/CertificateFields.md)
+ - [CertificateId](docs/Model/CertificateId.md)
  - [CheckTokenMessage](docs/Model/CheckTokenMessage.md)
  - [CheckTokenResponse](docs/Model/CheckTokenResponse.md)
+ - [ContactInfo](docs/Model/ContactInfo.md)
  - [Device](docs/Model/Device.md)
  - [DeviceArray](docs/Model/DeviceArray.md)
  - [DeviceEnvelope](docs/Model/DeviceEnvelope.md)
+ - [DevicePricingTier](docs/Model/DevicePricingTier.md)
+ - [DevicePricingTierEnvelope](docs/Model/DevicePricingTierEnvelope.md)
+ - [DevicePricingTierRequest](docs/Model/DevicePricingTierRequest.md)
+ - [DevicePricingTiers](docs/Model/DevicePricingTiers.md)
+ - [DevicePricingTiersEnvelope](docs/Model/DevicePricingTiersEnvelope.md)
  - [DeviceRegCompleteRequest](docs/Model/DeviceRegCompleteRequest.md)
  - [DeviceRegConfirmUserRequest](docs/Model/DeviceRegConfirmUserRequest.md)
  - [DeviceRegConfirmUserResponse](docs/Model/DeviceRegConfirmUserResponse.md)
@@ -201,6 +226,10 @@ Class | Method | HTTP request | Description
  - [DeviceTypeEnvelope](docs/Model/DeviceTypeEnvelope.md)
  - [DeviceTypeInfo](docs/Model/DeviceTypeInfo.md)
  - [DeviceTypeInfoEnvelope](docs/Model/DeviceTypeInfoEnvelope.md)
+ - [DeviceTypePricingList](docs/Model/DeviceTypePricingList.md)
+ - [DeviceTypePricingTier](docs/Model/DeviceTypePricingTier.md)
+ - [DeviceTypePricingTiersEnvelope](docs/Model/DeviceTypePricingTiersEnvelope.md)
+ - [DeviceTypeUpdateInput](docs/Model/DeviceTypeUpdateInput.md)
  - [DeviceTypesEnvelope](docs/Model/DeviceTypesEnvelope.md)
  - [DeviceTypesInfo](docs/Model/DeviceTypesInfo.md)
  - [DeviceTypesInfoEnvelope](docs/Model/DeviceTypesInfoEnvelope.md)
@@ -248,6 +277,8 @@ Class | Method | HTTP request | Description
  - [PropertiesEnvelope](docs/Model/PropertiesEnvelope.md)
  - [RefreshTokenResponse](docs/Model/RefreshTokenResponse.md)
  - [RegisterMessage](docs/Model/RegisterMessage.md)
+ - [RejectedCSVRow](docs/Model/RejectedCSVRow.md)
+ - [RejectedCSVRowsEnvelope](docs/Model/RejectedCSVRowsEnvelope.md)
  - [RuleArray](docs/Model/RuleArray.md)
  - [RuleCreationInfo](docs/Model/RuleCreationInfo.md)
  - [RuleEnvelope](docs/Model/RuleEnvelope.md)
@@ -285,6 +316,7 @@ Class | Method | HTTP request | Description
  - [TaskUpdateRequest](docs/Model/TaskUpdateRequest.md)
  - [TaskUpdateResponse](docs/Model/TaskUpdateResponse.md)
  - [TasksStatusCounts](docs/Model/TasksStatusCounts.md)
+ - [Tier](docs/Model/Tier.md)
  - [Token](docs/Model/Token.md)
  - [TokenInfo](docs/Model/TokenInfo.md)
  - [TokenInfoSuccessResponse](docs/Model/TokenInfoSuccessResponse.md)
@@ -293,10 +325,20 @@ Class | Method | HTTP request | Description
  - [UnregisterDeviceResponse](docs/Model/UnregisterDeviceResponse.md)
  - [UnregisterDeviceResponseEnvelope](docs/Model/UnregisterDeviceResponseEnvelope.md)
  - [UpdateParameters](docs/Model/UpdateParameters.md)
+ - [UpgradePath](docs/Model/UpgradePath.md)
+ - [UpgradePathEnvelope](docs/Model/UpgradePathEnvelope.md)
+ - [UpgradePathUserToken](docs/Model/UpgradePathUserToken.md)
+ - [UpgradePathUserTokenEnvelope](docs/Model/UpgradePathUserTokenEnvelope.md)
+ - [UploadIdEnvelope](docs/Model/UploadIdEnvelope.md)
+ - [UploadStatusEnvelope](docs/Model/UploadStatusEnvelope.md)
  - [User](docs/Model/User.md)
  - [UserEnvelope](docs/Model/UserEnvelope.md)
  - [ValidationCallbackInfo](docs/Model/ValidationCallbackInfo.md)
+ - [ValidityPeriod](docs/Model/ValidityPeriod.md)
  - [WebSocketError](docs/Model/WebSocketError.md)
+ - [Whitelist](docs/Model/Whitelist.md)
+ - [WhitelistEnvelope](docs/Model/WhitelistEnvelope.md)
+ - [WhitelistResultEnvelope](docs/Model/WhitelistResultEnvelope.md)
 
 
 ## Documentation For Authorization

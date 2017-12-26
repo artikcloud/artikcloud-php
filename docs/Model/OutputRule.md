@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **rule** | **map[string,object]** |  | [optional] 
 **uid** | **string** |  | [optional] 
 **warning** | [**\ArtikCloud\ArtikCloud\Model\RuleWarningOutput**](RuleWarningOutput.md) |  | [optional] 
+**owner** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

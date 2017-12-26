@@ -1,9 +1,10 @@
-# DeviceShareInfo
+# ValidityPeriod
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uid** | **string** | User email | [optional] 
+**not_before** | **int** | Not before | [optional] 
+**not_after** | **int** | Not before | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
