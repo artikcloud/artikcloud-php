@@ -68,7 +68,8 @@ class OutputRule implements ArrayAccess
         'name' => 'string',
         'rule' => 'map[string,object]',
         'uid' => 'string',
-        'warning' => '\ArtikCloud\ArtikCloud\Model\RuleWarningOutput'
+        'warning' => '\ArtikCloud\ArtikCloud\Model\RuleWarningOutput',
+        'owner' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -94,7 +95,8 @@ class OutputRule implements ArrayAccess
         'name' => 'name',
         'rule' => 'rule',
         'uid' => 'uid',
-        'warning' => 'warning'
+        'warning' => 'warning',
+        'owner' => 'owner'
     ];
 
 
@@ -116,7 +118,8 @@ class OutputRule implements ArrayAccess
         'name' => 'setName',
         'rule' => 'setRule',
         'uid' => 'setUid',
-        'warning' => 'setWarning'
+        'warning' => 'setWarning',
+        'owner' => 'setOwner'
     ];
 
 
@@ -138,7 +141,8 @@ class OutputRule implements ArrayAccess
         'name' => 'getName',
         'rule' => 'getRule',
         'uid' => 'getUid',
-        'warning' => 'getWarning'
+        'warning' => 'getWarning',
+        'owner' => 'getOwner'
     ];
 
     public static function attributeMap()
@@ -156,8 +160,22 @@ class OutputRule implements ArrayAccess
         return self::$getters;
     }
 
+    const OWNER_USER = 'user';
+    const OWNER_APPLICATION = 'application';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public function getOwnerAllowableValues()
+    {
+        return [
+            self::OWNER_USER,
+            self::OWNER_APPLICATION,
+        ];
+    }
     
 
     /**
@@ -186,6 +204,7 @@ class OutputRule implements ArrayAccess
         $this->container['rule'] = isset($data['rule']) ? $data['rule'] : null;
         $this->container['uid'] = isset($data['uid']) ? $data['uid'] : null;
         $this->container['warning'] = isset($data['warning']) ? $data['warning'] : null;
+        $this->container['owner'] = isset($data['owner']) ? $data['owner'] : null;
     }
 
     /**
@@ -196,6 +215,11 @@ class OutputRule implements ArrayAccess
     public function listInvalidProperties()
     {
         $invalid_properties = [];
+
+        $allowed_values = ["user", "application"];
+        if (!in_array($this->container['owner'], $allowed_values)) {
+            $invalid_properties[] = "invalid value for 'owner', must be one of 'user', 'application'.";
+        }
 
         return $invalid_properties;
     }
@@ -209,6 +233,10 @@ class OutputRule implements ArrayAccess
     public function valid()
     {
 
+        $allowed_values = ["user", "application"];
+        if (!in_array($this->container['owner'], $allowed_values)) {
+            return false;
+        }
         return true;
     }
 
@@ -503,6 +531,31 @@ class OutputRule implements ArrayAccess
     public function setWarning($warning)
     {
         $this->container['warning'] = $warning;
+
+        return $this;
+    }
+
+    /**
+     * Gets owner
+     * @return string
+     */
+    public function getOwner()
+    {
+        return $this->container['owner'];
+    }
+
+    /**
+     * Sets owner
+     * @param string $owner
+     * @return $this
+     */
+    public function setOwner($owner)
+    {
+        $allowed_values = array('user', 'application');
+        if (!is_null($owner) && (!in_array($owner, $allowed_values))) {
+            throw new \InvalidArgumentException("Invalid value for 'owner', must be one of 'user', 'application'");
+        }
+        $this->container['owner'] = $owner;
 
         return $this;
     }

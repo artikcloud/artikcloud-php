@@ -55,6 +55,12 @@ class MessageOut implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'data' => 'map[string,object]',
+        'cid' => 'string',
+        'ddid' => 'string',
+        'sdid' => 'string',
+        'ts' => 'int',
+        'type' => 'string',
         'mid' => 'string',
         'uid' => 'string',
         'sdtid' => 'string',
@@ -72,6 +78,12 @@ class MessageOut implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'data' => 'data',
+        'cid' => 'cid',
+        'ddid' => 'ddid',
+        'sdid' => 'sdid',
+        'ts' => 'ts',
+        'type' => 'type',
         'mid' => 'mid',
         'uid' => 'uid',
         'sdtid' => 'sdtid',
@@ -85,6 +97,12 @@ class MessageOut implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'data' => 'setData',
+        'cid' => 'setCid',
+        'ddid' => 'setDdid',
+        'sdid' => 'setSdid',
+        'ts' => 'setTs',
+        'type' => 'setType',
         'mid' => 'setMid',
         'uid' => 'setUid',
         'sdtid' => 'setSdtid',
@@ -98,6 +116,12 @@ class MessageOut implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'data' => 'getData',
+        'cid' => 'getCid',
+        'ddid' => 'getDdid',
+        'sdid' => 'getSdid',
+        'ts' => 'getTs',
+        'type' => 'getType',
         'mid' => 'getMid',
         'uid' => 'getUid',
         'sdtid' => 'getSdtid',
@@ -136,6 +160,12 @@ class MessageOut implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['cid'] = isset($data['cid']) ? $data['cid'] : null;
+        $this->container['ddid'] = isset($data['ddid']) ? $data['ddid'] : null;
+        $this->container['sdid'] = isset($data['sdid']) ? $data['sdid'] : null;
+        $this->container['ts'] = isset($data['ts']) ? $data['ts'] : null;
+        $this->container['type'] = isset($data['type']) ? $data['type'] : 'message';
         $this->container['mid'] = isset($data['mid']) ? $data['mid'] : null;
         $this->container['uid'] = isset($data['uid']) ? $data['uid'] : null;
         $this->container['sdtid'] = isset($data['sdtid']) ? $data['sdtid'] : null;
@@ -167,6 +197,132 @@ class MessageOut implements ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets data
+     * @return map[string,object]
+     */
+    public function getData()
+    {
+        return $this->container['data'];
+    }
+
+    /**
+     * Sets data
+     * @param map[string,object] $data Message Payload.
+     * @return $this
+     */
+    public function setData($data)
+    {
+        $this->container['data'] = $data;
+
+        return $this;
+    }
+
+    /**
+     * Gets cid
+     * @return string
+     */
+    public function getCid()
+    {
+        return $this->container['cid'];
+    }
+
+    /**
+     * Sets cid
+     * @param string $cid Confirmation ID.
+     * @return $this
+     */
+    public function setCid($cid)
+    {
+        $this->container['cid'] = $cid;
+
+        return $this;
+    }
+
+    /**
+     * Gets ddid
+     * @return string
+     */
+    public function getDdid()
+    {
+        return $this->container['ddid'];
+    }
+
+    /**
+     * Sets ddid
+     * @param string $ddid Destination Device ID.
+     * @return $this
+     */
+    public function setDdid($ddid)
+    {
+        $this->container['ddid'] = $ddid;
+
+        return $this;
+    }
+
+    /**
+     * Gets sdid
+     * @return string
+     */
+    public function getSdid()
+    {
+        return $this->container['sdid'];
+    }
+
+    /**
+     * Sets sdid
+     * @param string $sdid Source Device ID.
+     * @return $this
+     */
+    public function setSdid($sdid)
+    {
+        $this->container['sdid'] = $sdid;
+
+        return $this;
+    }
+
+    /**
+     * Gets ts
+     * @return int
+     */
+    public function getTs()
+    {
+        return $this->container['ts'];
+    }
+
+    /**
+     * Sets ts
+     * @param int $ts Timestamp (past, present or future). Defaults to current time if not provided.
+     * @return $this
+     */
+    public function setTs($ts)
+    {
+        $this->container['ts'] = $ts;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     * @param string $type Type.
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
+
+        return $this;
+    }
 
     /**
      * Gets mid

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**revenue_share_percent** | [**\ArtikCloud\ArtikCloud\Model\Object**](Object.md) | revenue share percentage | [optional] 
+**revenue_share_percent** | **object** | revenue share percentage | [optional] 
 **tiers** | [**\ArtikCloud\ArtikCloud\Model\Tier[]**](Tier.md) | tiers | [optional] 
 **modified_on** | **int** | modified on | [optional] 
 **comments** | **string** | comments | [optional] 

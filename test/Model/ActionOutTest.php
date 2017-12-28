@@ -83,6 +83,54 @@ class ActionOutTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "data"
+     */
+    public function testPropertyData()
+    {
+
+    }
+
+    /**
+     * Test attribute "cid"
+     */
+    public function testPropertyCid()
+    {
+
+    }
+
+    /**
+     * Test attribute "ddid"
+     */
+    public function testPropertyDdid()
+    {
+
+    }
+
+    /**
+     * Test attribute "sdid"
+     */
+    public function testPropertySdid()
+    {
+
+    }
+
+    /**
+     * Test attribute "ts"
+     */
+    public function testPropertyTs()
+    {
+
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+
+    }
+
+    /**
      * Test attribute "mid"
      */
     public function testPropertyMid()

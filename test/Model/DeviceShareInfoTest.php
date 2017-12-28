@@ -83,9 +83,9 @@ class DeviceShareInfoTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "email"
+     * Test attribute "uid"
      */
-    public function testPropertyEmail()
+    public function testPropertyUid()
     {
 
     }

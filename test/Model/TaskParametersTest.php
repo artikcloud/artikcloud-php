@@ -91,6 +91,22 @@ class TaskParametersTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "scheduled_on"
+     */
+    public function testPropertyScheduledOn()
+    {
+
+    }
+
+    /**
+     * Test attribute "update"
+     */
+    public function testPropertyUpdate()
+    {
+
+    }
+
+    /**
      * Test attribute "value"
      */
     public function testPropertyValue()
